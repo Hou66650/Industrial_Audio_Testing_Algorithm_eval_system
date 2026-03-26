@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>算法测试复盘手册 — SmartQuality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface2: #f8f9fc;
+  --border: #e8eaf0;
+  --border-hi: #d0d4e8;
+  --text: #1a1d2e;
+  --text2: #5c6080;
+  --text3: #9ca3c0;
+  --primary: #6B5EE4;
+  --primary-light: #eeecfd;
+  --primary-mid: #c5bff8;
+  --blue: #3b82f6;
+  --blue-light: #eff6ff;
+  --green: #10b981;
+  --green-light: #ecfdf5;
+  --amber: #f59e0b;
+  --amber-light: #fffbeb;
+  --red: #ef4444;
+  --red-light: #fef2f2;
+  --gray-light: #f1f2f6;
+  --fn-color: #6B5EE4;
+  --fn-bg: #eeecfd;
+  --fp-color: #ef4444;
+  --fp-bg: #fef2f2;
+  --font: 'Noto Sans SC', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-lg: 14px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.logo-icon {
+  width: 28px; height: 28px;
+  background: var(--primary);
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.topbar-divider {
+  width: 1px; height: 18px;
+  background: var(--border);
+}
+
+.topbar-title {
+  font-size: 14px;
+  color: var(--text2);
+  font-weight: 400;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doc-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.doc-date {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+/* ── LAYOUT ── */
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+  align-items: start;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  position: sticky;
+  top: 76px;
+  padding-right: 20px;
+}
+
+.sidebar-section {
+  margin-bottom: 24px;
+}
+
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  padding: 0 8px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 13px;
+}
+
+.sidebar-item:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.sidebar-item.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.sidebar-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── MAIN ── */
+.main { min-width: 0; }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.page-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.page-header p {
+  font-size: 14px;
+  color: var(--text2);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.header-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text2);
+}
+
+.meta-chip-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+}
+
+/* ── CONFUSION MATRIX ── */
+.matrix-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title-icon {
+  width: 20px; height: 20px;
+  border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 6px;
+  max-width: 480px;
+}
+
+.matrix-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  text-align: center;
+  padding: 6px;
+  letter-spacing: 0.05em;
+}
+
+.matrix-row-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  writing-mode: horizontal-tb;
+}
+
+.matrix-cell {
+  border-radius: var(--radius-sm);
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.matrix-cell .cell-label {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.matrix-cell .cell-desc {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.cell-tp { background: var(--green-light); }
+.cell-tp .cell-label { color: var(--green); }
+.cell-tp .cell-desc { color: #059669; }
+
+.cell-tn { background: var(--blue-light); }
+.cell-tn .cell-label { color: var(--blue); }
+.cell-tn .cell-desc { color: #2563eb; }
+
+.cell-fp { background: var(--red-light); border: 1.5px solid #fca5a5; }
+.cell-fp .cell-label { color: var(--red); }
+.cell-fp .cell-desc { color: #dc2626; }
+
+.cell-fn { background: var(--fn-bg); border: 1.5px solid var(--primary-mid); }
+.cell-fn .cell-label { color: var(--fn-color); }
+.cell-fn .cell-desc { color: var(--fn-color); }
+
+.focus-label {
+  font-size: 11px;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── METRICS ROW ── */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+.metric-name {
+  font-size: 11px;
+  color: var(--text3);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.metric-formula {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text2);
+  margin-bottom: 6px;
+}
+
+.metric-desc {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+/* ── FLOW OVERVIEW ── */
+.flow-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+.flow-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 640px;
+}
+
+.flow-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.flow-step:hover { opacity: 0.75; }
+
+.flow-bubble {
+  width: 100%;
+  padding: 10px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.flow-step:hover .flow-bubble {
+  border-color: var(--primary-mid);
+  background: var(--primary-light);
+}
+
+.flow-step-num {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text3);
+  font-weight: 500;
+}
+
+.flow-step-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.flow-step-sub {
+  font-size: 10px;
+  color: var(--text3);
+  line-height: 1.3;
+}
+
+.flow-arrow {
+  flex-shrink: 0;
+  color: var(--text3);
+  font-size: 14px;
+  padding: 0 4px;
+  padding-bottom: 18px;
+}
+
+/* ── PHASE SECTIONS ── */
+.phase {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+.phase-num-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.phase-info h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.phase-info p {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.phase-tags {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tag-fn { background: var(--fn-bg); color: var(--fn-color); }
+.tag-fp { background: var(--fp-bg); color: var(--fp-color); }
+.tag-both { background: var(--gray-light); color: var(--text2); }
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+
+.phase-body { padding: 20px 24px; }
+
+/* ── STEP CARDS ── */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.step-card:hover { border-color: var(--border-hi); }
+.step-card.open {
+  border-color: var(--primary-mid);
+  box-shadow: 0 0 0 3px rgba(107,94,228,0.06);
+}
+
+.step-trigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  cursor: pointer;
+  user-select: none;
+  background: var(--surface);
+  transition: background 0.15s;
+}
+
+.step-card.open .step-trigger { background: var(--primary-light); }
+
+.step-idx {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  min-width: 28px;
+  font-weight: 500;
+}
+
+.step-name {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.step-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.step-chevron {
+  color: var(--text3);
+  font-size: 10px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.step-card.open .step-chevron { transform: rotate(180deg); }
+
+.step-body {
+  display: none;
+  padding: 16px 16px 18px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.step-card.open .step-body { display: block; }
+
+/* ── STEP BODY CONTENT ── */
+.section {
+  margin-bottom: 16px;
+}
+
+.section:last-child { margin-bottom: 0; }
+
+.section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.content-text {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+pre {
+  background: #1e1e2e;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #cdd6f4;
+  line-height: 1.9;
+  overflow-x: auto;
+  border-left: 3px solid var(--primary);
+}
+
+pre .cmt { color: #6c7086; }
+pre .kw  { color: #cba6f7; }
+pre .fn  { color: #89b4fa; }
+pre .str { color: #a6e3a1; }
+pre .num { color: #fab387; }
+
+/* ── METRICS PILLS ── */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  background: var(--surface2);
+  line-height: 1.3;
+}
+
+.pill-green { border-color: #6ee7b7; color: var(--green); background: var(--green-light); }
+.pill-red   { border-color: #fca5a5; color: var(--red); background: var(--red-light); }
+.pill-amber { border-color: #fcd34d; color: var(--amber); background: var(--amber-light); }
+.pill-blue  { border-color: #93c5fd; color: var(--blue); background: var(--blue-light); }
+.pill-purple{ border-color: var(--primary-mid); color: var(--primary); background: var(--primary-light); }
+
+/* ── BRANCH GRID ── */
+.branch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 8px;
+}
+
+.branch-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.branch-if {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.branch-then {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* ── NOTE BOX ── */
+.note {
+  background: var(--amber-light);
+  border: 1px solid #fcd34d;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #92400e;
+  line-height: 1.7;
+}
+
+.note::before {
+  content: '⚠ 注意  ';
+  font-weight: 600;
+  color: var(--amber);
+}
+
+/* ── TWO COL ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.col-box {
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+}
+
+.col-box-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.col-box-body {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* ── VERDICT GRID ── */
+.verdict-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.verdict-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: box-shadow 0.15s;
+}
+
+.verdict-card:hover { box-shadow: var(--shadow-md); }
+
+.verdict-case {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.verdict-trigger {
+  font-size: 11px;
+  color: var(--text3);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.verdict-action {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* ── DECISION TREE ── */
+.dtree {
+  background: #f8f9fc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 2.1;
+  color: var(--text2);
+  overflow-x: auto;
+}
+
+.dt-q  { color: var(--blue); font-weight: 500; }
+.dt-y  { color: var(--green); }
+.dt-n  { color: var(--red); }
+.dt-r  { color: var(--primary); font-weight: 600; }
+.dt-i  { padding-left: 20px; border-left: 2px solid var(--border); margin-left: 8px; display: block; }
+
+/* ── SCROLL TOP ── */
+.scroll-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 36px; height: 36px;
+  background: var(--primary);
+  color: white;
+  border-radius: 99px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(107,94,228,0.4);
+  transition: all 0.2s;
+  opacity: 0; pointer-events: none;
+}
+
+.scroll-top.visible { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { background: #5748d0; transform: translateY(-2px); }
+
+/* ── PRINT ── */
+@media print {
+  .topbar, .sidebar, .scroll-top { display: none; }
+  .layout { grid-template-columns: 1fr; padding: 0; }
+  .step-body { display: block !important; }
+  .step-chevron { display: none; }
+}
+
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .two-col { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <div class="logo-icon">SQ</div>
+      SmartQuality
+    </div>
+    <div class="topbar-divider"></div>
+    <span class="topbar-title">算法测试复盘手册</span>
+  </div>
+  <div class="topbar-right">
+    <span class="doc-tag">SOP-QA-002</span>
+    <span class="doc-date">2026-03-16</span>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">概览</div>
+      <a class="sidebar-item" href="#matrix">混淆矩阵定义</a>
+      <a class="sidebar-item" href="#flow">流程总览</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">复盘流程</div>
+      <a class="sidebar-item" href="#phase0">
+        <div class="sidebar-dot" style="background:#9ca3c0"></div>Step 0 · 数据准备
+      </a>
+      <a class="sidebar-item" href="#phase1">
+        <div class="sidebar-dot" style="background:var(--amber)"></div>Step 1 · 标签清洗
+      </a>
+      <a class="sidebar-item" href="#phase2">
+        <div class="sidebar-dot" style="background:var(--blue)"></div>Step 2a · FN分析
+      </a>
+      <a class="sidebar-item" href="#phase3">
+        <div class="sidebar-dot" style="background:var(--red)"></div>Step 2b · FP分析
+      </a>
+      <a class="sidebar-item" href="#phase4">
+        <div class="sidebar-dot" style="background:var(--green)"></div>Step 3 · 联合分析
+      </a>
+      <a class="sidebar-item" href="#phase5">
+        <div class="sidebar-dot" style="background:var(--primary)"></div>Step 4 · 根因定位
+      </a>
+      <a class="sidebar-item" href="#phase6">
+        <div class="sidebar-dot" style="background:var(--primary)"></div>Step 5 · 严重度验证
+      </a>
+      <a class="sidebar-item" href="#verdict">
+        <div class="sidebar-dot" style="background:#1a1d2e"></div>结论输出
+      </a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <h1>算法测试复盘手册</h1>
+      <p>对测试集中所有判错样本（FN误判 + FP漏检）进行系统性分析，定位根因并给出处理方向。两类错误共用同一套分析框架，从不同方向切入。</p>
+      <div class="header-meta">
+        <div class="meta-chip">
+          <div class="meta-chip-dot" style="background:var(--fn-color)"></div>
+          FN（误判）· 召回率问题
+        </div>
+        <div class="meta-chip">
+          <div class="meta-chip-dot" style="background:var(--fp-color)"></div>
+          FP（漏检）· 特异性问题
+        </div>
+        <div class="meta-chip">
+          <div class="meta-chip-dot" style="background:var(--green)"></div>
+          前提：有测试集 + 机理特征
+        </div>
+        <div class="meta-chip">
+          <div class="meta-chip-dot" style="background:var(--amber)"></div>
+          优先级：特异性 &gt; 召回率
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFUSION MATRIX -->
+    <div class="matrix-card" id="matrix">
+      <div class="card-title">
+        <div class="card-title-icon" style="background:var(--primary-light)">🔲</div>
+        混淆矩阵定义（以合格品为正类）
+      </div>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start">
+        <div class="matrix-grid">
+          <div></div>
+          <div class="matrix-header">预测：合格</div>
+          <div class="matrix-header">预测：异响</div>
+          <div class="matrix-row-label">实际：合格</div>
+          <div class="matrix-cell cell-tp">
+            <div class="cell-label">TP</div>
+            <div class="cell-desc">合格判合格<br>✓ 正确</div>
+          </div>
+          <div class="matrix-cell cell-fn">
+            <div class="cell-label">FN</div>
+            <div class="cell-desc">合格判异响<br>误判良品</div>
+            <div class="focus-label" style="background:var(--fn-bg);color:var(--fn-color)">↓ 召回率</div>
+          </div>
+          <div class="matrix-row-label">实际：异响</div>
+          <div class="matrix-cell cell-fp">
+            <div class="cell-label">FP</div>
+            <div class="cell-desc">异响判合格<br>漏检！</div>
+            <div class="focus-label" style="background:var(--fp-bg);color:var(--fp-color)">↓ 特异性</div>
+          </div>
+          <div class="matrix-cell cell-tn">
+            <div class="cell-label">TN</div>
+            <div class="cell-desc">异响判异响<br>✓ 正确</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <div style="font-size:11px;font-weight:600;color:var(--text3);letter-spacing:0.05em;margin-bottom:10px">关键指标</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="background:var(--fn-bg);border-radius:var(--radius-sm);padding:10px 14px">
+              <div style="font-size:12px;font-weight:600;color:var(--fn-color);margin-bottom:2px">召回率 (Recall)</div>
+              <div style="font-family:var(--mono);font-size:11px;color:var(--text2)">TP / (TP + FN)</div>
+              <div style="font-size:11px;color:var(--text2);margin-top:3px">避免误判良品的能力</div>
+            </div>
+            <div style="background:var(--fp-bg);border-radius:var(--radius-sm);padding:10px 14px">
+              <div style="font-size:12px;font-weight:600;color:var(--fp-color);margin-bottom:2px">特异性 (Specificity)</div>
+              <div style="font-family:var(--mono);font-size:11px;color:var(--text2)">TN / (TN + FP)</div>
+              <div style="font-size:11px;color:var(--text2);margin-top:3px">发现异响品的能力 · 优先保证</div>
+            </div>
+            <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px">
+              <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">精确率 (Precision)</div>
+              <div style="font-family:var(--mono);font-size:11px;color:var(--text2)">TP / (TP + FP)</div>
+              <div style="font-size:11px;color:var(--text2);margin-top:3px">判合格的产品确实合格的概率</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW OVERVIEW -->
+    <div class="flow-card" id="flow">
+      <div class="card-title">
+        <div class="card-title-icon" style="background:var(--primary-light)">→</div>
+        复盘流程总览
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step" onclick="scrollTo('phase0')">
+          <div class="flow-bubble">
+            <div class="flow-step-num">STEP 0</div>
+            <div class="flow-step-label">数据准备</div>
+            <div class="flow-step-sub">四组分类</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" onclick="scrollTo('phase1')">
+          <div class="flow-bubble">
+            <div class="flow-step-num">STEP 1</div>
+            <div class="flow-step-label">标签清洗</div>
+            <div class="flow-step-sub">剔除噪声</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" onclick="scrollTo('phase2')">
+          <div class="flow-bubble">
+            <div class="flow-step-num">STEP 2a</div>
+            <div class="flow-step-label">FN分析</div>
+            <div class="flow-step-sub">误判根因</div>
+          </div>
+        </div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-step" onclick="scrollTo('phase3')">
+          <div class="flow-bubble">
+            <div class="flow-step-num">STEP 2b</div>
+            <div class="flow-step-label">FP分析</div>
+            <div class="flow-step-sub">漏检根因</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" onclick="scrollTo('phase4')">
+          <div class="flow-bubble">
+            <div class="flow-step-num">STEP 3</div>
+            <div class="flow-step-label">联合分析</div>
+            <div class="flow-step-sub">Trade-off</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" onclick="scrollTo('phase5')">
+          <div class="flow-bubble">
+            <div class="flow-step-num">STEP 4</div>
+            <div class="flow-step-label">根因定位</div>
+            <div class="flow-step-sub">分情况处理</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" onclick="scrollTo('phase6')">
+          <div class="flow-bubble">
+            <div class="flow-step-num">STEP 5</div>
+            <div class="flow-step-label">严重度验证</div>
+            <div class="flow-step-sub">机理评分</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 0 -->
+    <div class="phase" id="phase0">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--gray-light);color:var(--text2)">STEP 0</span>
+        <div class="phase-info">
+          <h2>数据准备</h2>
+          <p>将测试集分为四组，提取机理特征并标准化</p>
+        </div>
+        <div class="phase-tags">
+          <span class="tag tag-both">FN + FP</span>
+          <span class="tag tag-green">必做</span>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="steps-list">
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">0.1</span>
+              <span class="step-name">按判定结果 × 真实标签分为四组</span>
+              <span class="step-badge" style="background:var(--green-light);color:var(--green)">必做</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">四组定义</div>
+                <div class="two-col">
+                  <div class="col-box" style="background:var(--green-light);border-color:#6ee7b7">
+                    <div class="col-box-title" style="color:var(--green)">正确预测</div>
+                    <div class="col-box-body">TP：实际合格，预测合格
+TN：实际异响，预测异响</div>
+                  </div>
+                  <div class="col-box" style="background:#fef9f0;border-color:#fcd34d">
+                    <div class="col-box-title" style="color:#b45309">错误预测（复盘对象）</div>
+                    <div class="col-box-body">FN：合格被判异响 → 误判分析
+FP：异响被判合格 → 漏检分析</div>
+                  </div>
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-label">量化指标</div>
+                <div class="pill-row">
+                  <span class="pill pill-purple">FN误判率 = FN / (TP+FN)</span>
+                  <span class="pill pill-red">FP漏检率 = FP / (TN+FP)</span>
+                  <span class="pill pill-amber">FN或FP &lt; 20条 → 扩充测试集</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">0.2</span>
+              <span class="step-name">提取机理特征，以 TP 为基准标准化</span>
+              <span class="step-badge" style="background:var(--green-light);color:var(--green)">必做</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">操作说明</div>
+                <div class="content-text">对四组所有样本计算同一套机理特征（分贝、粗糙度、峭度、调制深度等）。
+标准化基准必须用 TP（真合格）的均值和标准差，而非全体样本。</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> StandardScaler
+
+<span class="cmt"># 只用 TP 样本拟合 scaler</span>
+scaler = StandardScaler()
+scaler.<span class="fn">fit</span>(X_tp)
+
+X_tp_z = scaler.<span class="fn">transform</span>(X_tp)
+X_tn_z = scaler.<span class="fn">transform</span>(X_tn)
+X_fn_z = scaler.<span class="fn">transform</span>(X_fn)   <span class="cmt"># 误判样本</span>
+X_fp_z = scaler.<span class="fn">transform</span>(X_fp)   <span class="cmt"># 漏检样本</span></pre>
+              </div>
+              <div class="section">
+                <div class="note">基准绝对不能用全体样本，否则 FP/FN 的异常信号会污染均值，导致 Z-score 失真。</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="phase" id="phase1">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--amber-light);color:var(--amber)">STEP 1</span>
+        <div class="phase-info">
+          <h2>标签噪声清洗</h2>
+          <p>剔除标注错误样本，确保后续分析在干净数据上进行</p>
+        </div>
+        <div class="phase-tags">
+          <span class="tag tag-both">FN + FP</span>
+          <span class="tag tag-amber">优先执行</span>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="steps-list">
+
+          <div class="step-card open" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">1.1</span>
+              <span class="step-name">FN中的噪声识别：异响被误标为合格品</span>
+              <span class="step-badge tag-fn">FN专项</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">逻辑</div>
+                <div class="content-text">真实的合格品在所有机理维度上应和 TP 高度相似。
+若一个"标签合格"样本的机理特征接近异响，大概率是标注错误。</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="cmt"># 计算 FN 样本与 TP 分布的综合异常分</span>
+z_max_fn = np.<span class="fn">abs</span>(X_fn_z).<span class="fn">max</span>(axis=<span class="num">1</span>)
+
+<span class="cmt"># 异常分很高 → 可能是标注错误（实为异响被标为合格）</span>
+noise_mask = z_max_fn > <span class="num">2.5</span>
+print(<span class="fn">f</span><span class="str">"FN中疑似标注错误: {noise_mask.sum()} / {len(X_fn_z)}"</span>)
+
+X_fn_clean = X_fn_z[~noise_mask]   <span class="cmt"># 清洗后的真实误判</span>
+X_fn_noise = X_fn_z[noise_mask]    <span class="cmt"># 待人工二次确认</span></pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定阈值</div>
+                <div class="pill-row">
+                  <span class="pill pill-purple">综合异常分 &gt; 2.5 → 疑似标注错误，人工确认</span>
+                  <span class="pill pill-amber">噪声比例 &gt; 20% → 标注流程需整体审查</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">1.2</span>
+              <span class="step-name">FP中的噪声识别：合格品被误标为异响</span>
+              <span class="step-badge tag-fp">FP专项</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">逻辑</div>
+                <div class="content-text">真实的异响品在机理上应和 TN 相似，与 TP 有明显差异。
+若一个"标签异响"样本机理特征完全正常，大概率是误标的合格品。</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="cmt"># FP 样本与 TP 的 Z-score（用 TP 基准标准化后接近0则为正常）</span>
+z_max_fp = np.<span class="fn">abs</span>(X_fp_z).<span class="fn">max</span>(axis=<span class="num">1</span>)
+
+<span class="cmt"># 综合异常分很低 → 机理完全正常 → 疑似标注错误</span>
+noise_mask_fp = z_max_fp < <span class="num">1.0</span>
+print(<span class="fn">f</span><span class="str">"FP中疑似标注错误: {noise_mask_fp.sum()} / {len(X_fp_z)}"</span>)
+
+X_fp_clean = X_fp_z[~noise_mask_fp]  <span class="cmt"># 真实漏检</span>
+X_fp_noise = X_fp_z[noise_mask_fp]   <span class="cmt"># 待人工确认</span></pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定阈值</div>
+                <div class="pill-row">
+                  <span class="pill pill-red">综合异常分 &lt; 1.0 → 机理完全正常，疑似误标</span>
+                  <span class="pill pill-amber">人工确认后清洗，不进入后续分析</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2a FN -->
+    <div class="phase" id="phase2">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--fn-bg);color:var(--fn-color)">STEP 2a</span>
+        <div class="phase-info">
+          <h2>FN 误判分析</h2>
+          <p>分析合格品被误判为异响的原因 · 召回率问题</p>
+        </div>
+        <div class="phase-tags">
+          <span class="tag tag-fn">FN专项</span>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="steps-list">
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">2a.1</span>
+              <span class="step-name">机理特征分布对比：FN vs TP</span>
+              <span class="step-badge" style="background:var(--blue-light);color:var(--blue)">可视化</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">操作</div>
+                <div class="content-text">对每个机理特征，绘制 TP / FN / TN 三组的箱线图或小提琴图。
+核心问题：FN 的特征分布更接近 TP 还是 TN？</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="kw">import</span> seaborn <span class="kw">as</span> sns
+
+df[<span class="str">'group'</span>] = labels.map({<span class="str">'TP'</span>:<span class="str">'合格(TP)'</span>, <span class="str">'FN'</span>:<span class="str">'误判(FN)'</span>, <span class="str">'TN'</span>:<span class="str">'异响(TN)'</span>})
+<span class="kw">for</span> feat <span class="kw">in</span> features:
+    sns.<span class="fn">violinplot</span>(data=df, x=<span class="str">'group'</span>, y=feat, inner=<span class="str">'box'</span>)</pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定分支</div>
+                <div class="branch-grid">
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--fn-color)">FN ≈ TP 分布</div>
+                    <div class="branch-then">机理正常，模型误判
+→ 决策边界问题
+→ 进入 2a.2 定位原因</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--amber)">FN 介于 TP 和 TN 之间</div>
+                    <div class="branch-then">边界样本，特征模糊
+→ 模型在此区域不确定
+→ 进入 2a.2</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">2a.2</span>
+              <span class="step-name">置信度分布：定位误判类型</span>
+              <span class="step-badge" style="background:var(--fn-bg);color:var(--fn-color)">诊断</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="cmt"># 模型对 FN 样本输出的异响概率（越高说明越自信地判错）</span>
+conf = model.<span class="fn">predict_proba</span>(X_fn)[:, <span class="num">1</span>]  <span class="cmt"># 异响概率</span>
+plt.<span class="fn">hist</span>(conf, bins=<span class="num">20</span>)
+plt.<span class="fn">axvline</span>(<span class="num">0.5</span>, color=<span class="str">'red'</span>, linestyle=<span class="str">'--'</span>)</pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定分支</div>
+                <div class="branch-grid">
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--fn-color)">置信度集中在 0.5 附近</div>
+                    <div class="branch-then">情况A：边界样本不足
+→ 该区域训练数据稀疏
+→ 补充边界区域合格样本</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--red)">置信度集中在 0.8+</div>
+                    <div class="branch-then">情况C：分布偏移
+→ 模型系统性误判
+→ KS检验定位偏移特征</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">2a.3</span>
+              <span class="step-name">情况A：百分位分析定位补数据区间</span>
+              <span class="step-badge" style="background:var(--green-light);color:var(--green)">情况A</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="kw">from</span> scipy.stats <span class="kw">import</span> percentileofscore
+
+<span class="kw">for</span> i, feat <span class="kw">in</span> <span class="fn">enumerate</span>(features):
+    pcts = [<span class="fn">percentileofscore</span>(X_tp[:,i], v)
+            <span class="kw">for</span> v <span class="kw">in</span> X_fn[:,i]]
+    p90 = np.<span class="fn">percentile</span>(pcts, <span class="num">90</span>)
+    print(<span class="fn">f</span><span class="str">"{feat}: FN落在TP分布的 {p90:.0f} 百分位"</span>)</pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定阈值</div>
+                <div class="pill-row">
+                  <span class="pill pill-purple">百分位 &gt; 90% → 该特征高值区域缺少训练样本</span>
+                  <span class="pill pill-amber">不要调低模型阈值来掩盖，会导致特异性下降</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">2a.4</span>
+              <span class="step-name">情况C：KS检验定位分布偏移特征</span>
+              <span class="step-badge" style="background:var(--red-light);color:var(--red)">情况C</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="kw">from</span> scipy.stats <span class="kw">import</span> ks_2samp
+
+<span class="kw">for</span> i, feat <span class="kw">in</span> <span class="fn">enumerate</span>(features):
+    stat, pval = <span class="fn">ks_2samp</span>(X_train_tp[:,i], X_test_tp[:,i])
+    flag = <span class="str">'*** DRIFT'</span> <span class="kw">if</span> pval < <span class="num">0.05</span> <span class="kw">else</span> <span class="str">''</span>
+    print(<span class="fn">f</span><span class="str">"{feat:20s} KS={stat:.3f} p={pval:.4f} {flag}"</span>)</pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定阈值</div>
+                <div class="pill-row">
+                  <span class="pill pill-red">p &lt; 0.05 → 该特征发生显著分布漂移</span>
+                  <span class="pill">排查产线切换、设备更换、季节性变化</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2b FP -->
+    <div class="phase" id="phase3">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--fp-bg);color:var(--fp-color)">STEP 2b</span>
+        <div class="phase-info">
+          <h2>FP 漏检分析</h2>
+          <p>分析异响品未被检出的原因 · 特异性问题 · 优先级最高</p>
+        </div>
+        <div class="phase-tags">
+          <span class="tag tag-fp">FP专项</span>
+          <span class="tag" style="background:#fef2f2;color:#991b1b;border:1px solid #fca5a5">⚠ 优先处理</span>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="steps-list">
+
+          <div class="step-card open" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">2b.1</span>
+              <span class="step-name">机理信号强度分析：漏检样本有无可识别信号</span>
+              <span class="step-badge tag-fp">核心诊断</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">核心问题</div>
+                <div class="content-text">模型是"有信号没抓到"还是"信号本来就很弱"？
+计算漏检 FP 样本与 TP 的 Cohen's d（各机理维度）。</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="kw">def</span> <span class="fn">cohens_d</span>(a, b):
+    pooled = np.<span class="fn">sqrt</span>((a.<span class="fn">std</span>()**<span class="num">2</span> + b.<span class="fn">std</span>()**<span class="num">2</span>) / <span class="num">2</span>)
+    <span class="kw">return</span> <span class="fn">abs</span>(a.<span class="fn">mean</span>() - b.<span class="fn">mean</span>()) / pooled
+
+<span class="kw">for</span> i, feat <span class="kw">in</span> <span class="fn">enumerate</span>(features):
+    d = <span class="fn">cohens_d</span>(X_fp_clean[:,i], X_tp[:,i])
+    tag = <span class="str">'强信号'</span> <span class="kw">if</span> d > <span class="num">0.8</span> <span class="kw">else</span> (<span class="str">'中等'</span> <span class="kw">if</span> d > <span class="num">0.5</span> <span class="kw">else</span> <span class="str">'弱信号'</span>)
+    print(<span class="fn">f</span><span class="str">"{feat:20s}  d={d:.2f}  {tag}"</span>)</pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定分支</div>
+                <div class="branch-grid">
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--green)">d &gt; 0.8（强信号）</div>
+                    <div class="branch-then">机理可区分，是模型问题
+→ 进入 2b.2 分析漏检规律</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--amber)">d 0.5–0.8（中等）</div>
+                    <div class="branch-then">模型和特征都可能有问题
+→ 进入 2b.2，同时记录待优化特征</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--red)">d &lt; 0.5（弱信号）</div>
+                    <div class="branch-then">当前特征无法描述此类缺陷
+→ 需要设计新特征维度
+→ 进入 2b.3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">2b.2</span>
+              <span class="step-name">漏检规律性分析：随机还是系统性漏检</span>
+              <span class="step-badge" style="background:var(--blue-light);color:var(--blue)">信号强时执行</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">方向一：聚类分析</div>
+<pre><span class="kw">from</span> sklearn.cluster <span class="kw">import</span> DBSCAN
+<span class="kw">from</span> sklearn.metrics <span class="kw">import</span> silhouette_score
+
+<span class="cmt"># 对漏检样本做聚类，看是否有系统性缺陷子类</span>
+db = <span class="fn">DBSCAN</span>(eps=<span class="num">0.5</span>, min_samples=<span class="num">3</span>)
+cluster_labels = db.<span class="fn">fit_predict</span>(X_fp_clean)
+
+n_clusters = <span class="fn">len</span>(<span class="fn">set</span>(cluster_labels)) - (<span class="num">1</span> <span class="kw">if</span> -<span class="num">1</span> <span class="kw">in</span> cluster_labels <span class="kw">else</span> <span class="num">0</span>)
+print(<span class="fn">f</span><span class="str">"发现 {n_clusters} 个漏检聚类"</span>)
+
+<span class="kw">if</span> n_clusters > <span class="num">1</span>:
+    score = <span class="fn">silhouette_score</span>(X_fp_clean, cluster_labels)
+    print(<span class="fn">f</span><span class="str">"轮廓系数: {score:.3f}"</span>)  <span class="cmt"># > 0.4 说明聚类结构清晰</span></pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定分支</div>
+                <div class="branch-grid">
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--green)">轮廓系数 &gt; 0.4</div>
+                    <div class="branch-then">存在系统性漏检缺陷子类
+→ 分析各 cluster 主导特征
+→ 针对性补充该类样本</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--red)">轮廓系数 &lt; 0.4</div>
+                    <div class="branch-then">漏检分散无规律
+→ 模型整体特异性设置问题
+→ 调整损失函数权重</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">2b.3</span>
+              <span class="step-name">弱信号处理：设计新特征维度</span>
+              <span class="step-badge" style="background:var(--red-light);color:var(--red)">信号弱时执行</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">操作</div>
+                <div class="content-text">当前机理特征集无法描述该类漏检缺陷，需要结合领域知识设计新维度。
+常见方向：</div>
+              </div>
+              <div class="section">
+                <div class="pill-row">
+                  <span class="pill pill-purple">时频联合特征（短时傅里叶 / 小波）</span>
+                  <span class="pill pill-blue">调制特征（AM/FM 解调深度）</span>
+                  <span class="pill pill-green">心理声学特征（响度、尖锐度）</span>
+                  <span class="pill">统计矩（偏度、峰度的高阶组合）</span>
+                </div>
+              </div>
+              <div class="section">
+                <div class="note">新特征设计后需重新跑 Step 2b.1 的 Cohen's d 验证是否有效，d &gt; 0.8 才值得加入特征集。</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 联合分析 -->
+    <div class="phase" id="phase4">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--green-light);color:var(--green)">STEP 3</span>
+        <div class="phase-info">
+          <h2>FN + FP 联合特征空间分析</h2>
+          <p>将两类错误投影到同一空间，分析相互关系与 trade-off</p>
+        </div>
+        <div class="phase-tags">
+          <span class="tag tag-both">FN + FP</span>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="steps-list">
+
+          <div class="step-card open" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">3.1</span>
+              <span class="step-name">PCA / UMAP 四组联合可视化</span>
+              <span class="step-badge" style="background:var(--green-light);color:var(--green)">关键步骤</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">操作说明</div>
+                <div class="content-text">将 TP / TN / FN / FP 四组合并降维，在同一张图上观察位置关系。
+这是判断 FN 和 FP 是否源于同一边界问题的关键步骤。</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre>X_all = np.<span class="fn">vstack</span>([X_tp_z, X_tn_z, X_fn_z, X_fp_z])
+labels_all = (
+    [<span class="str">'TP'</span>]*<span class="fn">len</span>(X_tp_z) + [<span class="str">'TN'</span>]*<span class="fn">len</span>(X_tn_z) +
+    [<span class="str">'FN'</span>]*<span class="fn">len</span>(X_fn_z) + [<span class="str">'FP'</span>]*<span class="fn">len</span>(X_fp_z)
+)
+
+pca = <span class="fn">PCA</span>(n_components=<span class="num">2</span>)
+X_2d = pca.<span class="fn">fit_transform</span>(X_all)
+
+colors = {<span class="str">'TP'</span>:<span class="str">'#10b981'</span>, <span class="str">'TN'</span>:<span class="str">'#3b82f6'</span>,
+          <span class="str">'FN'</span>:<span class="str">'#6B5EE4'</span>, <span class="str">'FP'</span>:<span class="str">'#ef4444'</span>}
+markers = {<span class="str">'TP'</span>:<span class="str">'o'</span>, <span class="str">'TN'</span>:<span class="str">'s'</span>, <span class="str">'FN'</span>:<span class="str">'^'</span>, <span class="str">'FP'</span>:<span class="str">'x'</span>}</pre>
+              </div>
+              <div class="section">
+                <div class="section-label">观察要点</div>
+                <div class="branch-grid">
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--amber)">FN 和 FP 都聚集在决策边界附近</div>
+                    <div class="branch-then">两类错误是同一边界问题的两面
+→ 调整边界会同时影响 FN 和 FP
+→ 需要权衡，以降低 FP 为优先</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--green)">FN 和 FP 位于不同区域</div>
+                    <div class="branch-then">两类问题相互独立
+→ 可以分别处理，互不干扰</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--red)">FP 形成独立 cluster 远离 TN</div>
+                    <div class="branch-then">系统性漏检特定缺陷类型
+→ 对应 2b.2 的聚类结果
+→ 针对性补充该类训练样本</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">3.2</span>
+              <span class="step-name">Trade-off 量化：调整边界对 FN/FP 的影响</span>
+              <span class="step-badge" style="background:var(--amber-light);color:var(--amber)">权衡评估</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">操作</div>
+                <div class="content-text">绘制不同分类阈值下的 特异性 vs 召回率 曲线（ROC 曲线），
+找到在满足特异性约束条件下，召回率最大的工作点。</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="kw">from</span> sklearn.metrics <span class="kw">import</span> roc_curve
+
+fpr, tpr, thresholds = <span class="fn">roc_curve</span>(y_true, y_prob)
+<span class="cmt"># fpr = FP率 = 1 - 特异性，tpr = 召回率</span>
+
+<span class="cmt"># 找到特异性 ≥ 0.95 时的最大召回率工作点</span>
+specificity = <span class="num">1</span> - fpr
+valid = specificity >= <span class="num">0.95</span>
+best_idx = tpr[valid].<span class="fn">argmax</span>()
+best_thresh = thresholds[valid][best_idx]
+print(<span class="fn">f</span><span class="str">"推荐阈值: {best_thresh:.3f}"</span>)
+print(<span class="fn">f</span><span class="str">"特异性: {specificity[valid][best_idx]:.3f}"</span>)
+print(<span class="fn">f</span><span class="str">"召回率: {tpr[valid][best_idx]:.3f}"</span>)</pre>
+              </div>
+              <div class="section">
+                <div class="note">业务优先级：特异性优先（FP=0是目标），在特异性约束满足的前提下再最大化召回率。</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 根因 -->
+    <div class="phase" id="phase5">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--primary-light);color:var(--primary)">STEP 4</span>
+        <div class="phase-info">
+          <h2>根因定位与处理方案</h2>
+          <p>综合前三步输出，对号入座</p>
+        </div>
+        <div class="phase-tags">
+          <span class="tag tag-both">FN + FP</span>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="verdict-grid">
+          <div class="verdict-card" style="border-top:3px solid var(--fn-color)">
+            <div class="verdict-case" style="color:var(--fn-color)">FN · 情况A</div>
+            <div class="verdict-trigger">置信度 ≈ 0.5
+边界区域合格样本稀疏</div>
+            <div class="verdict-action">↳ 百分位分析找缺口区间
+↳ 补充边界区域合格样本
+↳ 重训分类模型
+↳ 预期：召回率提升</div>
+          </div>
+          <div class="verdict-card" style="border-top:3px solid var(--amber)">
+            <div class="verdict-case" style="color:var(--amber)">FN · 情况C</div>
+            <div class="verdict-trigger">置信度 &gt; 0.8
+训练/测试分布漂移</div>
+            <div class="verdict-action">↳ KS检验定位漂移特征
+↳ 排查产线/工况变化
+↳ 补充对应工况训练数据
+↳ 预期：召回率提升</div>
+          </div>
+          <div class="verdict-card" style="border-top:3px solid var(--red)">
+            <div class="verdict-case" style="color:var(--red)">FP · 强信号</div>
+            <div class="verdict-trigger">Cohen's d &gt; 0.8
+有系统性漏检规律</div>
+            <div class="verdict-action">↳ 聚类分析识别漏检缺陷类型
+↳ 针对性补充该类异响样本
+↳ 调整损失函数 FP 惩罚权重
+↳ 预期：特异性提升</div>
+          </div>
+          <div class="verdict-card" style="border-top:3px solid var(--blue)">
+            <div class="verdict-case" style="color:var(--blue)">FP · 弱信号</div>
+            <div class="verdict-trigger">Cohen's d &lt; 0.5
+现有特征无法描述该缺陷</div>
+            <div class="verdict-action">↳ 设计新机理特征维度
+↳ 验证新特征 d &gt; 0.8
+↳ 加入特征集重训
+↳ 预期：特异性提升</div>
+          </div>
+          <div class="verdict-card" style="border-top:3px solid #9ca3c0">
+            <div class="verdict-case" style="color:var(--text2)">FN + FP 共边界</div>
+            <div class="verdict-trigger">两类错误都聚集在边界附近
+调整边界会相互影响</div>
+            <div class="verdict-action">↳ ROC曲线找最优工作点
+↳ 特异性约束优先
+↳ 补充边界区域两类样本
+↳ 预期：综合提升</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 严重度 -->
+    <div class="phase" id="phase6">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--primary-light);color:var(--primary)">STEP 5</span>
+        <div class="phase-info">
+          <h2>机理严重度验证</h2>
+          <p>验证机理评分系统对漏检样本的严重度输出是否合理</p>
+        </div>
+        <div class="phase-tags">
+          <span class="tag tag-fp">FP重点</span>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="steps-list">
+
+          <div class="step-card open" onclick="toggle(this)">
+            <div class="step-trigger">
+              <span class="step-idx">5.1</span>
+              <span class="step-name">计算漏检样本的机理严重度分</span>
+              <span class="step-badge tag-fp">FP专项</span>
+              <span class="step-chevron">▼</span>
+            </div>
+            <div class="step-body">
+              <div class="section">
+                <div class="section-label">逻辑</div>
+                <div class="content-text">即使被分类模型漏检，机理评分系统应能给出合理的严重度排序。
+各维度超过阈值 → 触发对应严重度，任意一个超过 → 判为异响（OR逻辑）。</div>
+              </div>
+              <div class="section">
+                <div class="section-label">代码参考</div>
+<pre><span class="cmt"># 对每个漏检样本计算各维度是否超过机理阈值</span>
+<span class="kw">for</span> feat, thresh <span class="kw">in</span> thresholds.items():
+    triggered = (X_fp[feat] > thresh).<span class="fn">mean</span>()
+    print(<span class="fn">f</span><span class="str">"{feat}: {triggered:.1%} 的漏检样本触发阈值"</span>)
+
+<span class="cmt"># 综合严重度：取各维度 Z-score 的加权和</span>
+severity = (X_fp_z * weights).<span class="fn">sum</span>(axis=<span class="num">1</span>)
+print(<span class="fn">f</span><span class="str">"严重度分布: min={severity.min():.2f} max={severity.max():.2f}"</span>)</pre>
+              </div>
+              <div class="section">
+                <div class="section-label">判定分支</div>
+                <div class="branch-grid">
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--green)">严重度分布合理（有高有低）</div>
+                    <div class="branch-then">机理评分体系有效
+→ 漏检问题在分类模型侧解决
+→ 机理评分侧无需调整</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--amber)">严重度普遍偏低（系统性低估）</div>
+                    <div class="branch-then">机理阈值设置偏高
+→ 重新标定阈值
+→ 重点关注轻微缺陷区间</div>
+                  </div>
+                  <div class="branch-card">
+                    <div class="branch-if" style="color:var(--red)">部分样本严重度为 0</div>
+                    <div class="branch-then">对应情况：弱信号 (d &lt; 0.5)
+→ 现有特征无法描述该缺陷
+→ 需要新特征维度（2b.3）</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- VERDICT -->
+    <div class="phase" id="verdict">
+      <div class="phase-header">
+        <span class="phase-num-badge" style="background:var(--gray-light);color:var(--text2)">OUTPUT</span>
+        <div class="phase-info">
+          <h2>快速决策树</h2>
+          <p>综合判定入口，快速定位处理路径</p>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="dtree">
+<span class="dt-q">拿到测试结果，先看 FP（漏检）率</span>
+<span class="dt-i"><span class="dt-y">├─ FP 率 = 0</span> → 特异性达标，专注处理 FN（误判）
+<span class="dt-y">└─ FP 率 &gt; 0</span> → <span class="dt-q">漏检样本机理信号强？（Cohen's d &gt; 0.8）</span>
+<span class="dt-i"><span class="dt-y">  ├─ 是</span> → <span class="dt-q">漏检有聚类规律？（轮廓系数 &gt; 0.4）</span>
+<span class="dt-i"><span class="dt-y">       ├─ 是</span> → <span class="dt-r">系统性漏检</span> → 识别缺陷子类，针对性补样本
+<span class="dt-y">       └─ 否</span> → <span class="dt-r">随机漏检</span>    → 调整损失函数 FP 惩罚权重</span>
+<span class="dt-n">  └─ 否</span> → <span class="dt-r">特征不足</span>        → 设计新机理特征维度</span></span>
+
+<span class="dt-q">再处理 FN（误判），先看置信度分布</span>
+<span class="dt-i"><span class="dt-y">├─ 置信度 ≈ 0.5</span> → <span class="dt-r">情况A 边界样本不足</span> → 百分位分析 → 补充边界样本
+<span class="dt-y">└─ 置信度 &gt; 0.8</span> → <span class="dt-r">情况C 分布漂移</span>    → KS检验 → 排查工况变化</span>
+
+<span class="dt-q">最后检查：FN 和 FP 是否共用同一边界区域？</span>
+<span class="dt-i"><span class="dt-y">├─ 是</span> → ROC 曲线找最优工作点，以特异性约束为优先
+<span class="dt-n">└─ 否</span> → 两类问题独立，分别处理</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggle(card) {
+  card.classList.toggle('open');
+}
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
+});
+
+// Sidebar active state on scroll
+const phases = ['matrix','flow','phase0','phase1','phase2','phase3','phase4','phase5','phase6','verdict'];
+const sidebarLinks = document.querySelectorAll('.sidebar-item');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  phases.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  sidebarLinks.forEach(link => {
+    const href = link.getAttribute('href').replace('#','');
+    link.classList.toggle('active', href === current);
+  });
+});
+</script>
+</body>
+</html>

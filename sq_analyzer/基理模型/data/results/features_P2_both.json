@@ -1,0 +1,2609 @@
+{
+  "metadata": {
+    "total_samples": 23,
+    "ok_count": 11,
+    "ng_count": 12,
+    "feature_count": 18
+  },
+  "samples": {
+    "andaotuo_ng1.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": -0.40727442502975464,
+          "unit": "dB",
+          "adaptive_score": 90.2363798394546,
+          "fixed_score": 73.98181393742561
+        },
+        "K": {
+          "raw": 40.74238586425781,
+          "unit": "-",
+          "adaptive_score": 29.893580543070502,
+          "fixed_score": 40.74238586425781
+        },
+        "E_low": {
+          "raw": 12.44093132019043,
+          "unit": "%",
+          "adaptive_score": 86.80701951642388,
+          "fixed_score": 12.44093132019043
+        },
+        "E_mid": {
+          "raw": 57.96625518798828,
+          "unit": "%",
+          "adaptive_score": 56.19207813225802,
+          "fixed_score": 57.96625518798828
+        },
+        "E_high": {
+          "raw": 29.00642967224121,
+          "unit": "%",
+          "adaptive_score": 35.0442864521307,
+          "fixed_score": 29.006429672241214
+        },
+        "dB(A)": {
+          "raw": 60.980628967285156,
+          "unit": "dB",
+          "adaptive_score": 41.85936500527289,
+          "fixed_score": 34.96771494547526
+        },
+        "N": {
+          "raw": 285.0050278627029,
+          "unit": "sone",
+          "adaptive_score": 62.60523759296704,
+          "fixed_score": 57.00100557254058
+        },
+        "S": {
+          "raw": 0.9852771759033203,
+          "unit": "acum",
+          "adaptive_score": 25.405130836187684,
+          "fixed_score": 19.705543518066406
+        },
+        "R": {
+          "raw": 0.4589804708957672,
+          "unit": "asper",
+          "adaptive_score": 33.360908138521275,
+          "fixed_score": 22.94902354478836
+        },
+        "F": {
+          "raw": 0.07908725706332746,
+          "unit": "vacil",
+          "adaptive_score": 11.62109310138179,
+          "fixed_score": 1.581745141266549
+        },
+        "TI": {
+          "raw": 4.448474884033203,
+          "unit": "-",
+          "adaptive_score": 86.86224388270273,
+          "fixed_score": 88.96949768066406
+        },
+        "A": {
+          "raw": 9.701029638781343,
+          "unit": "-",
+          "adaptive_score": 41.04140488676007,
+          "fixed_score": 97.01029638781343
+        },
+        "TNR": {
+          "raw": 38.81127166748047,
+          "unit": "dB",
+          "adaptive_score": 49.241367133340916,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.48414046148196843,
+          "unit": "-",
+          "adaptive_score": 67.60308623121215,
+          "fixed_score": 9.68280922963937
+        },
+        "SK": {
+          "raw": 660.9752680311891,
+          "unit": "-",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 27.536388397216797,
+          "unit": "dB",
+          "adaptive_score": 48.002451692476896,
+          "fixed_score": 91.78796132405598
+        },
+        "NSI": {
+          "raw": 7.179523468017578,
+          "unit": "-",
+          "adaptive_score": 52.884972318728515,
+          "fixed_score": 71.79523468017578
+        }
+      }
+    },
+    "andaotuo_ok1.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -5.250482559204102,
+          "unit": "dB",
+          "adaptive_score": 73.22775771630057,
+          "fixed_score": 61.873793601989746
+        },
+        "K": {
+          "raw": 28.695528030395508,
+          "unit": "-",
+          "adaptive_score": 23.010413089382,
+          "fixed_score": 28.695528030395508
+        },
+        "E_low": {
+          "raw": 5.9913201332092285,
+          "unit": "%",
+          "adaptive_score": 45.771043135455024,
+          "fixed_score": 5.9913201332092285
+        },
+        "E_mid": {
+          "raw": 61.672420501708984,
+          "unit": "%",
+          "adaptive_score": 59.430791646988055,
+          "fixed_score": 61.67242050170898
+        },
+        "E_high": {
+          "raw": 32.26862335205078,
+          "unit": "%",
+          "adaptive_score": 38.123092887951664,
+          "fixed_score": 32.26862335205078
+        },
+        "dB(A)": {
+          "raw": 58.08111572265625,
+          "unit": "dB",
+          "adaptive_score": 33.6465086527324,
+          "fixed_score": 30.135192871093754
+        },
+        "N": {
+          "raw": 251.3273999920166,
+          "unit": "sone",
+          "adaptive_score": 51.19598264477149,
+          "fixed_score": 50.265479998403315
+        },
+        "S": {
+          "raw": 1.2324049472808838,
+          "unit": "acum",
+          "adaptive_score": 29.747291970226858,
+          "fixed_score": 24.648098945617676
+        },
+        "R": {
+          "raw": 0.33514198660850525,
+          "unit": "asper",
+          "adaptive_score": 24.638495081699098,
+          "fixed_score": 16.757099330425262
+        },
+        "F": {
+          "raw": 0.05847562951908482,
+          "unit": "vacil",
+          "adaptive_score": 10.157740628722498,
+          "fixed_score": 1.1695125903816963
+        },
+        "TI": {
+          "raw": 4.7054972648620605,
+          "unit": "-",
+          "adaptive_score": 91.66666666666667,
+          "fixed_score": 94.10994529724121
+        },
+        "A": {
+          "raw": 8.678008056915676,
+          "unit": "-",
+          "adaptive_score": 35.82407685314612,
+          "fixed_score": 86.78008056915675
+        },
+        "TNR": {
+          "raw": 35.16161346435547,
+          "unit": "dB",
+          "adaptive_score": 37.719911587144765,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.4880645557674417,
+          "unit": "-",
+          "adaptive_score": 69.13382644005475,
+          "fixed_score": 9.761291115348833
+        },
+        "SK": {
+          "raw": 344.04200170565304,
+          "unit": "-",
+          "adaptive_score": 51.23777679428543,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 36.314109802246094,
+          "unit": "dB",
+          "adaptive_score": 65.33056716297241,
+          "fixed_score": 100.0
+        },
+        "NSI": {
+          "raw": 7.189998149871826,
+          "unit": "-",
+          "adaptive_score": 53.037129404298945,
+          "fixed_score": 71.89998149871826
+        }
+      }
+    },
+    "brose_ng1.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": 0.0,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 75.0
+        },
+        "K": {
+          "raw": 11.622986793518066,
+          "unit": "-",
+          "adaptive_score": 13.255739977600605,
+          "fixed_score": 11.622986793518066
+        },
+        "E_low": {
+          "raw": 0.8021429181098938,
+          "unit": "%",
+          "adaptive_score": 12.754641454480534,
+          "fixed_score": 0.8021429181098938
+        },
+        "E_mid": {
+          "raw": 27.34128761291504,
+          "unit": "%",
+          "adaptive_score": 29.429781262671113,
+          "fixed_score": 27.34128761291504
+        },
+        "E_high": {
+          "raw": 61.609886169433594,
+          "unit": "%",
+          "adaptive_score": 65.81490939669621,
+          "fixed_score": 61.609886169433594
+        },
+        "dB(A)": {
+          "raw": 68.56169891357422,
+          "unit": "dB",
+          "adaptive_score": 63.332706636931,
+          "fixed_score": 47.602831522623696
+        },
+        "N": {
+          "raw": 314.379898469919,
+          "unit": "sone",
+          "adaptive_score": 72.55681105636118,
+          "fixed_score": 62.875979693983794
+        },
+        "S": {
+          "raw": 2.917269468307495,
+          "unit": "acum",
+          "adaptive_score": 59.351221947590304,
+          "fixed_score": 58.3453893661499
+        },
+        "R": {
+          "raw": 0.5057936310768127,
+          "unit": "asper",
+          "adaptive_score": 36.6581361524486,
+          "fixed_score": 25.289681553840637
+        },
+        "F": {
+          "raw": 0.03277846881164144,
+          "unit": "vacil",
+          "adaptive_score": 8.333333333333334,
+          "fixed_score": 0.6555693762328287
+        },
+        "TI": {
+          "raw": 1.4468375444412231,
+          "unit": "-",
+          "adaptive_score": 30.75376501394933,
+          "fixed_score": 28.936750888824463
+        },
+        "A": {
+          "raw": 15.270709545342047,
+          "unit": "-",
+          "adaptive_score": 69.44632578956386,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 30.604206085205078,
+          "unit": "dB",
+          "adaptive_score": 23.332820083664274,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.48333044538097225,
+          "unit": "-",
+          "adaptive_score": 67.28710905905425,
+          "fixed_score": 9.666608907619445
+        },
+        "SK": {
+          "raw": 201.58206932261209,
+          "unit": "-",
+          "adaptive_score": 33.065191176135116,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 16.536285400390625,
+          "unit": "dB",
+          "adaptive_score": 26.287128760589944,
+          "fixed_score": 55.120951334635414
+        },
+        "NSI": {
+          "raw": 9.269742012023926,
+          "unit": "-",
+          "adaptive_score": 83.24785744370999,
+          "fixed_score": 92.69742012023926
+        }
+      }
+    },
+    "brose_ng2.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": -5.377058029174805,
+          "unit": "dB",
+          "adaptive_score": 72.78324360929754,
+          "fixed_score": 61.55735492706299
+        },
+        "K": {
+          "raw": 3.8061187267303467,
+          "unit": "-",
+          "adaptive_score": 8.789445728169754,
+          "fixed_score": 3.8061187267303467
+        },
+        "E_low": {
+          "raw": 1.2422460317611694,
+          "unit": "%",
+          "adaptive_score": 15.554819706068715,
+          "fixed_score": 1.2422460317611694
+        },
+        "E_mid": {
+          "raw": 32.84980010986328,
+          "unit": "%",
+          "adaptive_score": 34.24351523289575,
+          "fixed_score": 32.84980010986328
+        },
+        "E_high": {
+          "raw": 61.046897888183594,
+          "unit": "%",
+          "adaptive_score": 65.28357002395072,
+          "fixed_score": 61.046897888183594
+        },
+        "dB(A)": {
+          "raw": 71.81660461425781,
+          "unit": "dB",
+          "adaptive_score": 72.55221029338036,
+          "fixed_score": 53.02767435709635
+        },
+        "N": {
+          "raw": 336.2002365405461,
+          "unit": "sone",
+          "adaptive_score": 79.94907161163314,
+          "fixed_score": 67.24004730810921
+        },
+        "S": {
+          "raw": 2.792123317718506,
+          "unit": "acum",
+          "adaptive_score": 57.15234017832162,
+          "fixed_score": 55.84246635437011
+        },
+        "R": {
+          "raw": 0.3427223563194275,
+          "unit": "asper",
+          "adaptive_score": 25.1724092047815,
+          "fixed_score": 17.136117815971375
+        },
+        "F": {
+          "raw": 0.1325537519089746,
+          "unit": "vacil",
+          "adaptive_score": 15.417024658405175,
+          "fixed_score": 2.6510750381794916
+        },
+        "TI": {
+          "raw": 2.528881549835205,
+          "unit": "-",
+          "adaptive_score": 50.980007008914065,
+          "fixed_score": 50.5776309967041
+        },
+        "A": {
+          "raw": 15.172681671801001,
+          "unit": "-",
+          "adaptive_score": 68.94639149514892,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 34.113704681396484,
+          "unit": "dB",
+          "adaptive_score": 34.41181154397013,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.47639644293105166,
+          "unit": "-",
+          "adaptive_score": 64.58224123831928,
+          "fixed_score": 9.527928858621033
+        },
+        "SK": {
+          "raw": null,
+          "unit": "-",
+          "adaptive_score": null,
+          "fixed_score": null
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 24.061737060546875,
+          "unit": "dB",
+          "adaptive_score": 41.143136295769224,
+          "fixed_score": 80.20579020182291
+        },
+        "NSI": {
+          "raw": 5.6870269775390625,
+          "unit": "-",
+          "adaptive_score": 31.204703707687276,
+          "fixed_score": 56.870269775390625
+        }
+      }
+    },
+    "brose_ng3.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": -8.042835235595703,
+          "unit": "dB",
+          "adaptive_score": 63.42143302581332,
+          "fixed_score": 54.89291191101074
+        },
+        "K": {
+          "raw": 3.6025643348693848,
+          "unit": "-",
+          "adaptive_score": 8.673141627595545,
+          "fixed_score": 3.6025643348693848
+        },
+        "E_low": {
+          "raw": 1.1019946336746216,
+          "unit": "%",
+          "adaptive_score": 14.662463113954319,
+          "fixed_score": 1.1019946336746216
+        },
+        "E_mid": {
+          "raw": 35.85220718383789,
+          "unit": "%",
+          "adaptive_score": 36.867234237335026,
+          "fixed_score": 35.85220718383789
+        },
+        "E_high": {
+          "raw": 54.83241271972656,
+          "unit": "%",
+          "adaptive_score": 59.41843790430404,
+          "fixed_score": 54.83241271972656
+        },
+        "dB(A)": {
+          "raw": 70.34765625,
+          "unit": "dB",
+          "adaptive_score": 68.39142160676313,
+          "fixed_score": 50.57942708333333
+        },
+        "N": {
+          "raw": 307.09897673444385,
+          "unit": "sone",
+          "adaptive_score": 70.09019159441861,
+          "fixed_score": 61.419795346888776
+        },
+        "S": {
+          "raw": 1.7903000116348267,
+          "unit": "acum",
+          "adaptive_score": 39.54979312906629,
+          "fixed_score": 35.80600023269653
+        },
+        "R": {
+          "raw": 0.2619183659553528,
+          "unit": "asper",
+          "adaptive_score": 19.48107839876133,
+          "fixed_score": 13.09591829776764
+        },
+        "F": {
+          "raw": 0.053472089644803426,
+          "unit": "vacil",
+          "adaptive_score": 9.802507038780968,
+          "fixed_score": 1.0694417928960687
+        },
+        "TI": {
+          "raw": 2.1150450706481934,
+          "unit": "-",
+          "adaptive_score": 43.24431721011243,
+          "fixed_score": 42.30090141296387
+        },
+        "A": {
+          "raw": 11.525225886966794,
+          "unit": "-",
+          "adaptive_score": 50.344659474131106,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 35.30458450317383,
+          "unit": "dB",
+          "adaptive_score": 38.171250966467674,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.47736641472876185,
+          "unit": "-",
+          "adaptive_score": 64.96061513154984,
+          "fixed_score": 9.547328294575237
+        },
+        "SK": {
+          "raw": 120.23519736842105,
+          "unit": "-",
+          "adaptive_score": 22.68835770002834,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 21.335735321044922,
+          "unit": "dB",
+          "adaptive_score": 35.76173140317411,
+          "fixed_score": 71.1191177368164
+        },
+        "NSI": {
+          "raw": 6.1791558265686035,
+          "unit": "-",
+          "adaptive_score": 38.35345461348151,
+          "fixed_score": 61.79155826568603
+        }
+      }
+    },
+    "brose_ok1.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -11.799661636352539,
+          "unit": "dB",
+          "adaptive_score": 50.22802096039215,
+          "fixed_score": 45.50084590911865
+        },
+        "K": {
+          "raw": 3.327118396759033,
+          "unit": "-",
+          "adaptive_score": 8.515761127003714,
+          "fixed_score": 3.327118396759033
+        },
+        "E_low": {
+          "raw": 2.0194714069366455,
+          "unit": "%",
+          "adaptive_score": 20.499955345061995,
+          "fixed_score": 2.0194714069366455
+        },
+        "E_mid": {
+          "raw": 32.0438117980957,
+          "unit": "%",
+          "adaptive_score": 33.53918474111434,
+          "fixed_score": 32.0438117980957
+        },
+        "E_high": {
+          "raw": 59.73412322998047,
+          "unit": "%",
+          "adaptive_score": 64.04459421099581,
+          "fixed_score": 59.734123229980476
+        },
+        "dB(A)": {
+          "raw": 68.48898315429688,
+          "unit": "dB",
+          "adaptive_score": 63.126739622771986,
+          "fixed_score": 47.48163859049479
+        },
+        "N": {
+          "raw": 290.2352565764143,
+          "unit": "sone",
+          "adaptive_score": 64.37712642852388,
+          "fixed_score": 58.04705131528286
+        },
+        "S": {
+          "raw": 2.2023186683654785,
+          "unit": "acum",
+          "adaptive_score": 46.789171317046375,
+          "fixed_score": 44.04637336730957
+        },
+        "R": {
+          "raw": 0.23483525216579437,
+          "unit": "asper",
+          "adaptive_score": 17.57351221126283,
+          "fixed_score": 11.741762608289719
+        },
+        "F": {
+          "raw": 0.10184225279618679,
+          "unit": "vacil",
+          "adaptive_score": 13.236617115657534,
+          "fixed_score": 2.036845055923736
+        },
+        "TI": {
+          "raw": 2.4571876525878906,
+          "unit": "-",
+          "adaptive_score": 49.63985992796579,
+          "fixed_score": 49.14375305175781
+        },
+        "A": {
+          "raw": 11.542953508700867,
+          "unit": "-",
+          "adaptive_score": 50.43506892343501,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 32.9425163269043,
+          "unit": "dB",
+          "adaptive_score": 30.714535302882577,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.48723986476297054,
+          "unit": "-",
+          "adaptive_score": 68.81212477119118,
+          "fixed_score": 9.74479729525941
+        },
+        "SK": {
+          "raw": null,
+          "unit": "-",
+          "adaptive_score": null,
+          "fixed_score": null
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 25.879150390625,
+          "unit": "dB",
+          "adaptive_score": 44.73089518991316,
+          "fixed_score": 86.26383463541667
+        },
+        "NSI": {
+          "raw": 5.860237121582031,
+          "unit": "-",
+          "adaptive_score": 33.72078496681621,
+          "fixed_score": 58.60237121582031
+        }
+      }
+    },
+    "brose_ok2.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -0.8506532907485962,
+          "unit": "dB",
+          "adaptive_score": 88.67929962000414,
+          "fixed_score": 72.87336677312851
+        },
+        "K": {
+          "raw": 4.435369491577148,
+          "unit": "-",
+          "adaptive_score": 9.148978350247148,
+          "fixed_score": 4.435369491577148
+        },
+        "E_low": {
+          "raw": 2.6414856910705566,
+          "unit": "%",
+          "adaptive_score": 24.457552591213453,
+          "fixed_score": 2.6414856910705566
+        },
+        "E_mid": {
+          "raw": 36.778594970703125,
+          "unit": "%",
+          "adaptive_score": 37.676778440367144,
+          "fixed_score": 36.778594970703125
+        },
+        "E_high": {
+          "raw": 49.925025939941406,
+          "unit": "%",
+          "adaptive_score": 54.78692442483851,
+          "fixed_score": 49.925025939941406
+        },
+        "dB(A)": {
+          "raw": 67.7921142578125,
+          "unit": "dB",
+          "adaptive_score": 61.15286205763878,
+          "fixed_score": 46.3201904296875
+        },
+        "N": {
+          "raw": 312.1994839252888,
+          "unit": "sone",
+          "adaptive_score": 71.81813357206921,
+          "fixed_score": 62.439896785057755
+        },
+        "S": {
+          "raw": 2.0197203159332275,
+          "unit": "acum",
+          "adaptive_score": 43.58082502455482,
+          "fixed_score": 40.39440631866455
+        },
+        "R": {
+          "raw": 0.25271713733673096,
+          "unit": "asper",
+          "adaptive_score": 18.83300104943182,
+          "fixed_score": 12.635856866836548
+        },
+        "F": {
+          "raw": 0.0544097841848228,
+          "unit": "vacil",
+          "adaptive_score": 9.86908002632361,
+          "fixed_score": 1.088195683696456
+        },
+        "TI": {
+          "raw": 1.7249189615249634,
+          "unit": "-",
+          "adaptive_score": 35.951836449306995,
+          "fixed_score": 34.49837923049927
+        },
+        "A": {
+          "raw": 12.144287673633455,
+          "unit": "-",
+          "adaptive_score": 53.501824944897514,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 32.841609954833984,
+          "unit": "dB",
+          "adaptive_score": 30.395988136153218,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.48648132698092694,
+          "unit": "-",
+          "adaptive_score": 68.51622864881745,
+          "fixed_score": 9.729626539618538
+        },
+        "SK": {
+          "raw": null,
+          "unit": "-",
+          "adaptive_score": null,
+          "fixed_score": null
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 23.374492645263672,
+          "unit": "dB",
+          "adaptive_score": 39.78644587065989,
+          "fixed_score": 77.91497548421223
+        },
+        "NSI": {
+          "raw": 8.660591125488281,
+          "unit": "-",
+          "adaptive_score": 74.39922367539037,
+          "fixed_score": 86.60591125488281
+        }
+      }
+    },
+    "brose_ok3.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -10.72531795501709,
+          "unit": "dB",
+          "adaptive_score": 54.00095518085137,
+          "fixed_score": 48.186705112457275
+        },
+        "K": {
+          "raw": 10.779319763183594,
+          "unit": "-",
+          "adaptive_score": 12.77369714742582,
+          "fixed_score": 10.779319763183594
+        },
+        "E_low": {
+          "raw": 0.39685583114624023,
+          "unit": "%",
+          "adaptive_score": 10.175981928194174,
+          "fixed_score": 0.39685583114624023
+        },
+        "E_mid": {
+          "raw": 33.37848663330078,
+          "unit": "%",
+          "adaptive_score": 34.70551949972477,
+          "fixed_score": 33.37848663330078
+        },
+        "E_high": {
+          "raw": 13.78794002532959,
+          "unit": "%",
+          "adaptive_score": 20.681318318637945,
+          "fixed_score": 13.78794002532959
+        },
+        "dB(A)": {
+          "raw": 60.10773468017578,
+          "unit": "dB",
+          "adaptive_score": 39.386896426533895,
+          "fixed_score": 33.512891133626304
+        },
+        "N": {
+          "raw": 215.98986580829322,
+          "unit": "sone",
+          "adaptive_score": 39.22438719004507,
+          "fixed_score": 43.197973161658645
+        },
+        "S": {
+          "raw": 0.5620245933532715,
+          "unit": "acum",
+          "adaptive_score": 17.968366835177548,
+          "fixed_score": 11.24049186706543
+        },
+        "R": {
+          "raw": 0.2509585916996002,
+          "unit": "asper",
+          "adaptive_score": 18.70914002582024,
+          "fixed_score": 12.547929584980011
+        },
+        "F": {
+          "raw": 0.5981184050869359,
+          "unit": "vacil",
+          "adaptive_score": 48.47046427390204,
+          "fixed_score": 11.962368101738718
+        },
+        "TI": {
+          "raw": 0.24741089344024658,
+          "unit": "-",
+          "adaptive_score": 8.333333333333334,
+          "fixed_score": 4.948217868804932
+        },
+        "A": {
+          "raw": 6.038495835219187,
+          "unit": "-",
+          "adaptive_score": 22.36277617930362,
+          "fixed_score": 60.38495835219187
+        },
+        "TNR": {
+          "raw": 38.550132751464844,
+          "unit": "dB",
+          "adaptive_score": 48.416988453255286,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.5035835102365542,
+          "unit": "-",
+          "adaptive_score": 75.18757690497337,
+          "fixed_score": 10.071670204731085
+        },
+        "SK": {
+          "raw": null,
+          "unit": "-",
+          "adaptive_score": null,
+          "fixed_score": null
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 49.654911041259766,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666667,
+          "fixed_score": 100.0
+        },
+        "NSI": {
+          "raw": 4.802923202514648,
+          "unit": "-",
+          "adaptive_score": 18.362055537426276,
+          "fixed_score": 48.029232025146484
+        }
+      }
+    },
+    "brose_ok4.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -16.473228454589844,
+          "unit": "dB",
+          "adaptive_score": 33.81515374995562,
+          "fixed_score": 33.81692886352539
+        },
+        "K": {
+          "raw": 3.431929111480713,
+          "unit": "-",
+          "adaptive_score": 8.575646427413107,
+          "fixed_score": 3.431929111480713
+        },
+        "E_low": {
+          "raw": 1.5784810781478882,
+          "unit": "%",
+          "adaptive_score": 17.69413214242622,
+          "fixed_score": 1.5784810781478882
+        },
+        "E_mid": {
+          "raw": 28.998130798339844,
+          "unit": "%",
+          "adaptive_score": 30.877649871380473,
+          "fixed_score": 28.998130798339844
+        },
+        "E_high": {
+          "raw": 26.3603515625,
+          "unit": "%",
+          "adaptive_score": 32.54696007804741,
+          "fixed_score": 26.3603515625
+        },
+        "dB(A)": {
+          "raw": 61.45618438720703,
+          "unit": "dB",
+          "adaptive_score": 43.20637328630949,
+          "fixed_score": 35.76030731201172
+        },
+        "N": {
+          "raw": 230.7860488070106,
+          "unit": "sone",
+          "adaptive_score": 44.23701529855452,
+          "fixed_score": 46.157209761402115
+        },
+        "S": {
+          "raw": 1.0290625095367432,
+          "unit": "acum",
+          "adaptive_score": 26.174461506246278,
+          "fixed_score": 20.581250190734863
+        },
+        "R": {
+          "raw": 0.19549790024757385,
+          "unit": "asper",
+          "adaptive_score": 14.80283366196482,
+          "fixed_score": 9.774895012378693
+        },
+        "F": {
+          "raw": 0.03776126806263308,
+          "unit": "vacil",
+          "adaptive_score": 8.687094412561656,
+          "fixed_score": 0.7552253612526616
+        },
+        "TI": {
+          "raw": 0.39698439836502075,
+          "unit": "-",
+          "adaptive_score": 11.129254655906523,
+          "fixed_score": 7.939687967300416
+        },
+        "A": {
+          "raw": 7.1888872072341545,
+          "unit": "-",
+          "adaptive_score": 28.2296799291694,
+          "fixed_score": 71.88887207234154
+        },
+        "TNR": {
+          "raw": 31.067283630371094,
+          "unit": "dB",
+          "adaptive_score": 24.7946904984071,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.5082867201183843,
+          "unit": "-",
+          "adaptive_score": 77.02224038474623,
+          "fixed_score": 10.165734402367685
+        },
+        "SK": {
+          "raw": null,
+          "unit": "-",
+          "adaptive_score": null,
+          "fixed_score": null
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 42.319419860839844,
+          "unit": "dB",
+          "adaptive_score": 77.1856604531078,
+          "fixed_score": 100.0
+        },
+        "NSI": {
+          "raw": 5.164999485015869,
+          "unit": "-",
+          "adaptive_score": 23.621639806061257,
+          "fixed_score": 51.649994850158684
+        }
+      }
+    },
+    "hlmrl_ng1.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": -17.40251922607422,
+          "unit": "dB",
+          "adaptive_score": 30.551623639989256,
+          "fixed_score": 31.493701934814457
+        },
+        "K": {
+          "raw": 7.874157428741455,
+          "unit": "-",
+          "adaptive_score": 11.113785566838772,
+          "fixed_score": 7.874157428741454
+        },
+        "E_low": {
+          "raw": 0.10724734514951706,
+          "unit": "%",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 0.10724734514951707
+        },
+        "E_mid": {
+          "raw": 95.13310241699219,
+          "unit": "%",
+          "adaptive_score": 88.67113943447417,
+          "fixed_score": 95.13310241699219
+        },
+        "E_high": {
+          "raw": 4.644082069396973,
+          "unit": "%",
+          "adaptive_score": 12.051490820289814,
+          "fixed_score": 4.644082069396973
+        },
+        "dB(A)": {
+          "raw": 59.68814468383789,
+          "unit": "dB",
+          "adaptive_score": 38.19840991995574,
+          "fixed_score": 32.81357447306315
+        },
+        "N": {
+          "raw": 172.8142528774611,
+          "unit": "sone",
+          "adaptive_score": 24.597419478306588,
+          "fixed_score": 34.56285057549221
+        },
+        "S": {
+          "raw": 0.07912658900022507,
+          "unit": "acum",
+          "adaptive_score": 9.483602316327344,
+          "fixed_score": 1.5825317800045016
+        },
+        "R": {
+          "raw": 0.9861951470375061,
+          "unit": "asper",
+          "adaptive_score": 70.49463277503953,
+          "fixed_score": 49.309757351875305
+        },
+        "F": {
+          "raw": 0.12427587279420318,
+          "unit": "vacil",
+          "adaptive_score": 14.829324592266586,
+          "fixed_score": 2.4855174558840636
+        },
+        "TI": {
+          "raw": 2.012141466140747,
+          "unit": "-",
+          "adaptive_score": 41.320778798969975,
+          "fixed_score": 40.24282932281494
+        },
+        "A": {
+          "raw": 5.060072142318892,
+          "unit": "-",
+          "adaptive_score": 17.372893803204242,
+          "fixed_score": 50.60072142318892
+        },
+        "TNR": {
+          "raw": 50.57237243652344,
+          "unit": "dB",
+          "adaptive_score": 86.36950137035976,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.4926563204842832,
+          "unit": "-",
+          "adaptive_score": 70.9250165517792,
+          "fixed_score": 9.853126409685665
+        },
+        "SK": {
+          "raw": 10.035923413133528,
+          "unit": "-",
+          "adaptive_score": 8.631031492502615,
+          "fixed_score": 20.071846826267056
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 35.412452697753906,
+          "unit": "dB",
+          "adaptive_score": 63.55060426594069,
+          "fixed_score": 100.0
+        },
+        "NSI": {
+          "raw": 5.000081539154053,
+          "unit": "-",
+          "adaptive_score": 21.226012487755806,
+          "fixed_score": 50.000815391540534
+        }
+      }
+    },
+    "hlmrl_ng2.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": 0.0,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 75.0
+        },
+        "K": {
+          "raw": 148.85708618164062,
+          "unit": "-",
+          "adaptive_score": 91.66666666666667,
+          "fixed_score": 100.0
+        },
+        "E_low": {
+          "raw": 0.7069289684295654,
+          "unit": "%",
+          "adaptive_score": 12.148837898739448,
+          "fixed_score": 0.7069289684295654
+        },
+        "E_mid": {
+          "raw": 98.56098175048828,
+          "unit": "%",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 98.56098175048828
+        },
+        "E_high": {
+          "raw": 0.704454779624939,
+          "unit": "%",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 0.704454779624939
+        },
+        "dB(A)": {
+          "raw": 69.3766098022461,
+          "unit": "dB",
+          "adaptive_score": 65.64093753781789,
+          "fixed_score": 48.96101633707682
+        },
+        "N": {
+          "raw": 231.75087084587992,
+          "unit": "sone",
+          "adaptive_score": 44.56387622425171,
+          "fixed_score": 46.350174169175986
+        },
+        "S": {
+          "raw": 0.013660706579685211,
+          "unit": "acum",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 0.2732141315937042
+        },
+        "R": {
+          "raw": 1.2867900133132935,
+          "unit": "asper",
+          "adaptive_score": 91.66666666666667,
+          "fixed_score": 64.33950066566467
+        },
+        "F": {
+          "raw": 1.206546006557004,
+          "unit": "vacil",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 24.13092013114008
+        },
+        "TI": {
+          "raw": 3.185878276824951,
+          "unit": "-",
+          "adaptive_score": 63.26099994797285,
+          "fixed_score": 63.71756553649902
+        },
+        "A": {
+          "raw": 7.056848921659552,
+          "unit": "-",
+          "adaptive_score": 27.55629526060513,
+          "fixed_score": 70.56848921659552
+        },
+        "TNR": {
+          "raw": 52.25035858154297,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.4963958103629239,
+          "unit": "-",
+          "adaptive_score": 72.3837448853429,
+          "fixed_score": 9.927916207258477
+        },
+        "SK": {
+          "raw": 65.84884411549707,
+          "unit": "-",
+          "adaptive_score": 15.750683054147455,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 22.640769958496094,
+          "unit": "dB",
+          "adaptive_score": 38.33800260697346,
+          "fixed_score": 75.46923319498698
+        },
+        "NSI": {
+          "raw": 7.693724155426025,
+          "unit": "-",
+          "adaptive_score": 60.35434266171873,
+          "fixed_score": 76.93724155426025
+        }
+      }
+    },
+    "hlmrl_ok1.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -23.72918128967285,
+          "unit": "dB",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 15.677046775817871
+        },
+        "K": {
+          "raw": 7.759344100952148,
+          "unit": "-",
+          "adaptive_score": 11.048185111351728,
+          "fixed_score": 7.759344100952148
+        },
+        "E_low": {
+          "raw": 1.0869733095169067,
+          "unit": "%",
+          "adaptive_score": 14.566889181592144,
+          "fixed_score": 1.0869733095169067
+        },
+        "E_mid": {
+          "raw": 88.17211151123047,
+          "unit": "%",
+          "adaptive_score": 82.58812547960815,
+          "fixed_score": 88.17211151123047
+        },
+        "E_high": {
+          "raw": 9.829256057739258,
+          "unit": "%",
+          "adaptive_score": 16.945175442685258,
+          "fixed_score": 9.829256057739258
+        },
+        "dB(A)": {
+          "raw": 49.1444091796875,
+          "unit": "dB",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 15.240681966145834
+        },
+        "N": {
+          "raw": 124.80622401543432,
+          "unit": "sone",
+          "adaptive_score": 8.333333333333334,
+          "fixed_score": 24.961244803086867
+        },
+        "S": {
+          "raw": 0.4244060814380646,
+          "unit": "acum",
+          "adaptive_score": 15.55033930864125,
+          "fixed_score": 8.488121628761292
+        },
+        "R": {
+          "raw": 0.4603591859340668,
+          "unit": "asper",
+          "adaptive_score": 33.458016255767006,
+          "fixed_score": 23.01795929670334
+        },
+        "F": {
+          "raw": 0.23306757587262392,
+          "unit": "vacil",
+          "adaptive_score": 22.55314976632915,
+          "fixed_score": 4.661351517452479
+        },
+        "TI": {
+          "raw": 1.7916977405548096,
+          "unit": "-",
+          "adaptive_score": 37.200107072361874,
+          "fixed_score": 35.83395481109619
+        },
+        "A": {
+          "raw": 3.600086970844081,
+          "unit": "-",
+          "adaptive_score": 9.927086501754355,
+          "fixed_score": 36.00086970844081
+        },
+        "TNR": {
+          "raw": 41.24128723144531,
+          "unit": "dB",
+          "adaptive_score": 56.912583104418204,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.49320756896587914,
+          "unit": "-",
+          "adaptive_score": 71.14005170497776,
+          "fixed_score": 9.864151379317583
+        },
+        "SK": {
+          "raw": 9.89431804337232,
+          "unit": "-",
+          "adaptive_score": 8.612967917271819,
+          "fixed_score": 19.78863608674464
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 30.556434631347656,
+          "unit": "dB",
+          "adaptive_score": 53.964330346004296,
+          "fixed_score": 100.0
+        },
+        "NSI": {
+          "raw": 4.6911773681640625,
+          "unit": "-",
+          "adaptive_score": 16.738815737305288,
+          "fixed_score": 46.911773681640625
+        }
+      }
+    },
+    "hlmrl_ok2.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -22.70477294921875,
+          "unit": "dB",
+          "adaptive_score": 11.93090211003871,
+          "fixed_score": 18.238067626953125
+        },
+        "K": {
+          "raw": 6.848348617553711,
+          "unit": "-",
+          "adaptive_score": 10.527673078399898,
+          "fixed_score": 6.848348617553711
+        },
+        "E_low": {
+          "raw": 1.0145984888076782,
+          "unit": "%",
+          "adaptive_score": 14.106400735529572,
+          "fixed_score": 1.0145984888076782
+        },
+        "E_mid": {
+          "raw": 92.00814056396484,
+          "unit": "%",
+          "adaptive_score": 85.94032325934383,
+          "fixed_score": 92.00814056396484
+        },
+        "E_high": {
+          "raw": 6.436256408691406,
+          "unit": "%",
+          "adaptive_score": 13.742916416533072,
+          "fixed_score": 6.436256408691405
+        },
+        "dB(A)": {
+          "raw": 50.818626403808594,
+          "unit": "dB",
+          "adaptive_score": 13.075545009767819,
+          "fixed_score": 18.031044006347656
+        },
+        "N": {
+          "raw": 128.06467706035878,
+          "unit": "sone",
+          "adaptive_score": 9.437227041910903,
+          "fixed_score": 25.612935412071757
+        },
+        "S": {
+          "raw": 0.168623149394989,
+          "unit": "acum",
+          "adaptive_score": 11.05610258212149,
+          "fixed_score": 3.3724629878997803
+        },
+        "R": {
+          "raw": 0.40980759263038635,
+          "unit": "asper",
+          "adaptive_score": 29.897476250671506,
+          "fixed_score": 20.490379631519318
+        },
+        "F": {
+          "raw": 0.2515895367260585,
+          "unit": "vacil",
+          "adaptive_score": 23.868143313306135,
+          "fixed_score": 5.03179073452117
+        },
+        "TI": {
+          "raw": 1.770438551902771,
+          "unit": "-",
+          "adaptive_score": 36.80271704741906,
+          "fixed_score": 35.40877103805542
+        },
+        "A": {
+          "raw": 3.2875814360268434,
+          "unit": "-",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 32.875814360268436
+        },
+        "TNR": {
+          "raw": 43.031837463378906,
+          "unit": "dB",
+          "adaptive_score": 62.56509732692539,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.4915733067681889,
+          "unit": "-",
+          "adaptive_score": 70.50254641692776,
+          "fixed_score": 9.831466135363778
+        },
+        "SK": {
+          "raw": 10.294316520467836,
+          "unit": "-",
+          "adaptive_score": 8.663992836703924,
+          "fixed_score": 20.588633040935672
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 31.709945678710938,
+          "unit": "dB",
+          "adaptive_score": 56.241478560545566,
+          "fixed_score": 100.0
+        },
+        "NSI": {
+          "raw": 4.695623397827148,
+          "unit": "-",
+          "adaptive_score": 16.803399552385116,
+          "fixed_score": 46.956233978271484
+        }
+      }
+    },
+    "jifeng_ok1.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": 0.0,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 75.0
+        },
+        "K": {
+          "raw": 120.70809936523438,
+          "unit": "-",
+          "adaptive_score": 75.58328686912527,
+          "fixed_score": 100.0
+        },
+        "E_low": {
+          "raw": 13.204720497131348,
+          "unit": "%",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 13.204720497131348
+        },
+        "E_mid": {
+          "raw": 60.32590866088867,
+          "unit": "%",
+          "adaptive_score": 58.25411286246004,
+          "fixed_score": 60.32590866088867
+        },
+        "E_high": {
+          "raw": 26.192420959472656,
+          "unit": "%",
+          "adaptive_score": 32.388469849655436,
+          "fixed_score": 26.192420959472656
+        },
+        "dB(A)": {
+          "raw": 70.80413818359375,
+          "unit": "dB",
+          "adaptive_score": 69.68440433587469,
+          "fixed_score": 51.340230305989586
+        },
+        "N": {
+          "raw": 357.2265397906052,
+          "unit": "sone",
+          "adaptive_score": 87.07233027222328,
+          "fixed_score": 71.44530795812103
+        },
+        "S": {
+          "raw": 1.1999638080596924,
+          "unit": "acum",
+          "adaptive_score": 29.17728458868091,
+          "fixed_score": 23.999276161193848
+        },
+        "R": {
+          "raw": 0.23719428479671478,
+          "unit": "asper",
+          "adaptive_score": 17.73966780610748,
+          "fixed_score": 11.85971423983574
+        },
+        "F": {
+          "raw": 0.9468570228648076,
+          "unit": "vacil",
+          "adaptive_score": 73.22966960796022,
+          "fixed_score": 18.93714045729615
+        },
+        "TI": {
+          "raw": 3.687732696533203,
+          "unit": "-",
+          "adaptive_score": 72.64197603458382,
+          "fixed_score": 73.75465393066406
+        },
+        "A": {
+          "raw": 11.786922641524978,
+          "unit": "-",
+          "adaptive_score": 51.6792919374778,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 34.487274169921875,
+          "unit": "dB",
+          "adaptive_score": 35.59111766413645,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.3322008329908399,
+          "unit": "-",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 6.644016659816798
+        },
+        "SK": {
+          "raw": 490.0509259259259,
+          "unit": "-",
+          "adaptive_score": 69.8630816924562,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 16.233489990234375,
+          "unit": "dB",
+          "adaptive_score": 25.689379801718083,
+          "fixed_score": 54.11163330078125
+        },
+        "NSI": {
+          "raw": 9.256959915161133,
+          "unit": "-",
+          "adaptive_score": 83.06218243866601,
+          "fixed_score": 92.56959915161133
+        }
+      }
+    },
+    "jifneg_ng1.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": 0.0,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 75.0
+        },
+        "K": {
+          "raw": 121.80783081054688,
+          "unit": "-",
+          "adaptive_score": 76.211636252555,
+          "fixed_score": 100.0
+        },
+        "E_low": {
+          "raw": 5.054258346557617,
+          "unit": "%",
+          "adaptive_score": 39.80894026913598,
+          "fixed_score": 5.054258346557617
+        },
+        "E_mid": {
+          "raw": 63.58814239501953,
+          "unit": "%",
+          "adaptive_score": 61.104887069380396,
+          "fixed_score": 63.58814239501953
+        },
+        "E_high": {
+          "raw": 30.817136764526367,
+          "unit": "%",
+          "adaptive_score": 36.753202965462805,
+          "fixed_score": 30.817136764526364
+        },
+        "dB(A)": {
+          "raw": 70.69989013671875,
+          "unit": "dB",
+          "adaptive_score": 69.38912227927321,
+          "fixed_score": 51.166483561197914
+        },
+        "N": {
+          "raw": 352.5427804938646,
+          "unit": "sone",
+          "adaptive_score": 85.48557350486175,
+          "fixed_score": 70.50855609877293
+        },
+        "S": {
+          "raw": 1.3246324062347412,
+          "unit": "acum",
+          "adaptive_score": 31.367775518183905,
+          "fixed_score": 26.492648124694824
+        },
+        "R": {
+          "raw": 0.2609174847602844,
+          "unit": "asper",
+          "adaptive_score": 19.41058254882876,
+          "fixed_score": 13.045874238014221
+        },
+        "F": {
+          "raw": 0.7650232726700303,
+          "unit": "vacil",
+          "adaptive_score": 60.32011807500693,
+          "fixed_score": 15.300465453400609
+        },
+        "TI": {
+          "raw": 3.843109130859375,
+          "unit": "-",
+          "adaptive_score": 75.54636933590027,
+          "fixed_score": 76.8621826171875
+        },
+        "A": {
+          "raw": 12.071529456975048,
+          "unit": "-",
+          "adaptive_score": 53.13076387426459,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 35.230506896972656,
+          "unit": "dB",
+          "adaptive_score": 37.93739842485579,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.3494897952283127,
+          "unit": "-",
+          "adaptive_score": 15.07754173934244,
+          "fixed_score": 6.989795904566254
+        },
+        "SK": {
+          "raw": 422.49220272904483,
+          "unit": "-",
+          "adaptive_score": 61.245102861417585,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 19.874156951904297,
+          "unit": "dB",
+          "adaptive_score": 32.87642693963347,
+          "fixed_score": 66.24718983968098
+        },
+        "NSI": {
+          "raw": 9.849303245544434,
+          "unit": "-",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 98.49303245544434
+        }
+      }
+    },
+    "nsk_ng1.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": -5.508503437042236,
+          "unit": "dB",
+          "adaptive_score": 72.32162700924569,
+          "fixed_score": 61.2287414073944
+        },
+        "K": {
+          "raw": 3.319326400756836,
+          "unit": "-",
+          "adaptive_score": 8.511309043811462,
+          "fixed_score": 3.3193264007568364
+        },
+        "E_low": {
+          "raw": 2.686311960220337,
+          "unit": "%",
+          "adaptive_score": 24.742761988919536,
+          "fixed_score": 2.686311960220337
+        },
+        "E_mid": {
+          "raw": 9.357797622680664,
+          "unit": "%",
+          "adaptive_score": 13.714515713732947,
+          "fixed_score": 9.357797622680664
+        },
+        "E_high": {
+          "raw": 67.7618179321289,
+          "unit": "%",
+          "adaptive_score": 71.6210046083157,
+          "fixed_score": 67.7618179321289
+        },
+        "dB(A)": {
+          "raw": 74.07147216796875,
+          "unit": "dB",
+          "adaptive_score": 78.93911104195841,
+          "fixed_score": 56.78578694661458
+        },
+        "N": {
+          "raw": 326.8661293529216,
+          "unit": "sone",
+          "adaptive_score": 76.78687714157404,
+          "fixed_score": 65.37322587058432
+        },
+        "S": {
+          "raw": 3.600494623184204,
+          "unit": "acum",
+          "adaptive_score": 71.35583679426018,
+          "fixed_score": 72.00989246368408
+        },
+        "R": {
+          "raw": 0.17156973481178284,
+          "unit": "asper",
+          "adaptive_score": 13.117482425439608,
+          "fixed_score": 8.578486740589142
+        },
+        "F": {
+          "raw": 0.09292297870239637,
+          "unit": "vacil",
+          "adaptive_score": 12.603380280213166,
+          "fixed_score": 1.8584595740479275
+        },
+        "TI": {
+          "raw": 2.961289167404175,
+          "unit": "-",
+          "adaptive_score": 59.06284011904405,
+          "fixed_score": 59.225783348083496
+        },
+        "A": {
+          "raw": 15.177011097392883,
+          "unit": "-",
+          "adaptive_score": 68.9684712185002,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 33.16421127319336,
+          "unit": "dB",
+          "adaptive_score": 31.414394940779278,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.5305582099299753,
+          "unit": "-",
+          "adaptive_score": 85.71007061646026,
+          "fixed_score": 10.611164198599505
+        },
+        "SK": {
+          "raw": 26.53780610380117,
+          "unit": "-",
+          "adaptive_score": 10.73605759381031,
+          "fixed_score": 53.07561220760234
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 18.013538360595703,
+          "unit": "dB",
+          "adaptive_score": 29.203376462288276,
+          "fixed_score": 60.04512786865235
+        },
+        "NSI": {
+          "raw": 4.2376861572265625,
+          "unit": "-",
+          "adaptive_score": 10.151322012131338,
+          "fixed_score": 42.376861572265625
+        }
+      }
+    },
+    "nsk_ng2.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": 0.0,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 75.0
+        },
+        "K": {
+          "raw": 5.531296253204346,
+          "unit": "-",
+          "adaptive_score": 9.7751538659949,
+          "fixed_score": 5.531296253204346
+        },
+        "E_low": {
+          "raw": 0.6488168835639954,
+          "unit": "%",
+          "adaptive_score": 11.77909682864115,
+          "fixed_score": 0.6488168835639954
+        },
+        "E_mid": {
+          "raw": 3.4899399280548096,
+          "unit": "%",
+          "adaptive_score": 8.586760093188706,
+          "fixed_score": 3.4899399280548096
+        },
+        "E_high": {
+          "raw": 89.0014877319336,
+          "unit": "%",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 89.0014877319336
+        },
+        "dB(A)": {
+          "raw": 78.56488037109375,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 64.27480061848958
+        },
+        "N": {
+          "raw": 370.7880170393265,
+          "unit": "sone",
+          "adaptive_score": 91.66666666666667,
+          "fixed_score": 74.15760340786531
+        },
+        "S": {
+          "raw": 4.21036958694458,
+          "unit": "acum",
+          "adaptive_score": 82.07165132818382,
+          "fixed_score": 84.2073917388916
+        },
+        "R": {
+          "raw": 0.3444952070713043,
+          "unit": "asper",
+          "adaptive_score": 25.297277791755622,
+          "fixed_score": 17.224760353565216
+        },
+        "F": {
+          "raw": 0.09904962394267983,
+          "unit": "vacil",
+          "adaptive_score": 13.03835036892794,
+          "fixed_score": 1.9809924788535964
+        },
+        "TI": {
+          "raw": 3.857497215270996,
+          "unit": "-",
+          "adaptive_score": 75.81532039122031,
+          "fixed_score": 77.14994430541992
+        },
+        "A": {
+          "raw": 19.62770763463836,
+          "unit": "-",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 25.85280990600586,
+          "unit": "dB",
+          "adaptive_score": 8.333333333333337,
+          "fixed_score": 89.63202476501465
+        },
+        "SI": {
+          "raw": 0.5227097275248115,
+          "unit": "-",
+          "adaptive_score": 82.64847557771388,
+          "fixed_score": 10.45419455049623
+        },
+        "SK": {
+          "raw": 49.137236537524366,
+          "unit": "-",
+          "adaptive_score": 13.618903862289637,
+          "fixed_score": 98.27447307504873
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 7.441619873046875,
+          "unit": "dB",
+          "adaptive_score": 8.333333333333334,
+          "fixed_score": 24.805399576822918
+        },
+        "NSI": {
+          "raw": 6.747270107269287,
+          "unit": "-",
+          "adaptive_score": 46.605983370457245,
+          "fixed_score": 67.47270107269287
+        }
+      }
+    },
+    "nsk_ok1.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -8.201520919799805,
+          "unit": "dB",
+          "adaptive_score": 62.86415265210049,
+          "fixed_score": 54.496197700500495
+        },
+        "K": {
+          "raw": 3.347104787826538,
+          "unit": "-",
+          "adaptive_score": 8.527180675437815,
+          "fixed_score": 3.347104787826538
+        },
+        "E_low": {
+          "raw": 6.4478678703308105,
+          "unit": "%",
+          "adaptive_score": 48.67585113304768,
+          "fixed_score": 6.4478678703308105
+        },
+        "E_mid": {
+          "raw": 5.2089152336120605,
+          "unit": "%",
+          "adaptive_score": 10.088924212253964,
+          "fixed_score": 5.2089152336120605
+        },
+        "E_high": {
+          "raw": 74.29725646972656,
+          "unit": "%",
+          "adaptive_score": 77.78904740571413,
+          "fixed_score": 74.29725646972656
+        },
+        "dB(A)": {
+          "raw": 70.6630859375,
+          "unit": "dB",
+          "adaptive_score": 69.28487457427866,
+          "fixed_score": 51.10514322916667
+        },
+        "N": {
+          "raw": 293.39202893705504,
+          "unit": "sone",
+          "adaptive_score": 65.44657291134213,
+          "fixed_score": 58.678405787411016
+        },
+        "S": {
+          "raw": 4.178553104400635,
+          "unit": "acum",
+          "adaptive_score": 81.51261948342572,
+          "fixed_score": 83.5710620880127
+        },
+        "R": {
+          "raw": 0.1077008992433548,
+          "unit": "asper",
+          "adaptive_score": 8.618958654801148,
+          "fixed_score": 5.38504496216774
+        },
+        "F": {
+          "raw": 0.094202565300346,
+          "unit": "vacil",
+          "adaptive_score": 12.694226391616647,
+          "fixed_score": 1.88405130600692
+        },
+        "TI": {
+          "raw": 2.6595256328582764,
+          "unit": "-",
+          "adaptive_score": 53.422087760955904,
+          "fixed_score": 53.19051265716552
+        },
+        "A": {
+          "raw": 14.053800277257908,
+          "unit": "-",
+          "adaptive_score": 63.24018610367236,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 35.570316314697266,
+          "unit": "dB",
+          "adaptive_score": 39.01012876906737,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.5345608610950567,
+          "unit": "-",
+          "adaptive_score": 87.27145488366371,
+          "fixed_score": 10.691217221901136
+        },
+        "SK": {
+          "raw": 26.58006860684698,
+          "unit": "-",
+          "adaptive_score": 10.741448716368,
+          "fixed_score": 53.16013721369396
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 21.339805603027344,
+          "unit": "dB",
+          "adaptive_score": 35.76976655409021,
+          "fixed_score": 71.13268534342448
+        },
+        "NSI": {
+          "raw": 4.388576984405518,
+          "unit": "-",
+          "adaptive_score": 12.34318891771656,
+          "fixed_score": 43.885769844055176
+        }
+      }
+    },
+    "nsk_ok2.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -12.84840202331543,
+          "unit": "dB",
+          "adaptive_score": 46.545001677929896,
+          "fixed_score": 42.878994941711426
+        },
+        "K": {
+          "raw": 3.0078349113464355,
+          "unit": "-",
+          "adaptive_score": 8.333333333333336,
+          "fixed_score": 3.0078349113464355
+        },
+        "E_low": {
+          "raw": 11.578592300415039,
+          "unit": "%",
+          "adaptive_score": 81.32034402204359,
+          "fixed_score": 11.578592300415039
+        },
+        "E_mid": {
+          "raw": 13.096879005432129,
+          "unit": "%",
+          "adaptive_score": 16.98199365438513,
+          "fixed_score": 13.09687900543213
+        },
+        "E_high": {
+          "raw": 65.21188354492188,
+          "unit": "%",
+          "adaptive_score": 69.21441714821356,
+          "fixed_score": 65.21188354492188
+        },
+        "dB(A)": {
+          "raw": 68.20195007324219,
+          "unit": "dB",
+          "adaptive_score": 62.313719896962475,
+          "fixed_score": 47.00325012207031
+        },
+        "N": {
+          "raw": 284.7850008568923,
+          "unit": "sone",
+          "adaptive_score": 62.5306971825076,
+          "fixed_score": 56.95700017137846
+        },
+        "S": {
+          "raw": 3.600121021270752,
+          "unit": "acum",
+          "adaptive_score": 71.34927241786838,
+          "fixed_score": 72.00242042541504
+        },
+        "R": {
+          "raw": 0.10364566743373871,
+          "unit": "asper",
+          "adaptive_score": 8.333333333333334,
+          "fixed_score": 5.182283371686935
+        },
+        "F": {
+          "raw": 0.08633560136209426,
+          "unit": "vacil",
+          "adaptive_score": 12.135699846022344,
+          "fixed_score": 1.7267120272418852
+        },
+        "TI": {
+          "raw": 2.3989527225494385,
+          "unit": "-",
+          "adaptive_score": 48.551296263599205,
+          "fixed_score": 47.97905445098877
+        },
+        "A": {
+          "raw": 12.833542930205866,
+          "unit": "-",
+          "adaptive_score": 57.01697148351981,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 34.101985931396484,
+          "unit": "dB",
+          "adaptive_score": 34.37481710513025,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.5133637559972886,
+          "unit": "-",
+          "adaptive_score": 79.00272872070325,
+          "fixed_score": 10.26727511994577
+        },
+        "SK": {
+          "raw": 21.809577927022417,
+          "unit": "-",
+          "adaptive_score": 10.132911643034248,
+          "fixed_score": 43.619155854044834
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 20.629512786865234,
+          "unit": "dB",
+          "adaptive_score": 34.36757623972589,
+          "fixed_score": 68.76504262288411
+        },
+        "NSI": {
+          "raw": 4.728044033050537,
+          "unit": "-",
+          "adaptive_score": 17.274347447182713,
+          "fixed_score": 47.28044033050537
+        }
+      }
+    },
+    "zass_ng1.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": 0.0,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 75.0
+        },
+        "K": {
+          "raw": 14.368868827819824,
+          "unit": "-",
+          "adaptive_score": 14.824644177420007,
+          "fixed_score": 14.368868827819824
+        },
+        "E_low": {
+          "raw": 4.4431233406066895,
+          "unit": "%",
+          "adaptive_score": 35.920562978981266,
+          "fixed_score": 4.4431233406066895
+        },
+        "E_mid": {
+          "raw": 14.515836715698242,
+          "unit": "%",
+          "adaptive_score": 18.221980844394103,
+          "fixed_score": 14.51583671569824
+        },
+        "E_high": {
+          "raw": 56.84529495239258,
+          "unit": "%",
+          "adaptive_score": 61.31816409494629,
+          "fixed_score": 56.84529495239258
+        },
+        "dB(A)": {
+          "raw": 71.30192565917969,
+          "unit": "dB",
+          "adaptive_score": 71.09438480023512,
+          "fixed_score": 52.16987609863282
+        },
+        "N": {
+          "raw": 292.47652765872914,
+          "unit": "sone",
+          "adaptive_score": 65.13642079700894,
+          "fixed_score": 58.49530553174582
+        },
+        "S": {
+          "raw": 4.0372185707092285,
+          "unit": "acum",
+          "adaptive_score": 79.02929955676818,
+          "fixed_score": 80.74437141418457
+        },
+        "R": {
+          "raw": 0.3947974145412445,
+          "unit": "asper",
+          "adaptive_score": 28.84025260889746,
+          "fixed_score": 19.739870727062225
+        },
+        "F": {
+          "raw": 0.30375477164359005,
+          "unit": "vacil",
+          "adaptive_score": 27.571690029331737,
+          "fixed_score": 6.075095432871801
+        },
+        "TI": {
+          "raw": 2.6397805213928223,
+          "unit": "-",
+          "adaptive_score": 53.052999811919655,
+          "fixed_score": 52.795610427856445
+        },
+        "A": {
+          "raw": 15.505007421729392,
+          "unit": "-",
+          "adaptive_score": 70.6412261712964,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 34.169830322265625,
+          "unit": "dB",
+          "adaptive_score": 34.58899226618732,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.4779345151471797,
+          "unit": "-",
+          "adaptive_score": 65.1822240149938,
+          "fixed_score": 9.558690302943594
+        },
+        "SK": {
+          "raw": 139.38421357212476,
+          "unit": "-",
+          "adaptive_score": 25.131059522527448,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 11.493694305419922,
+          "unit": "dB",
+          "adaptive_score": 16.33254069242909,
+          "fixed_score": 38.31231435139974
+        },
+        "NSI": {
+          "raw": 6.270258903503418,
+          "unit": "-",
+          "adaptive_score": 39.676834059825055,
+          "fixed_score": 62.70258903503419
+        }
+      }
+    },
+    "zass_ng2.wav": {
+      "label": "NG",
+      "features": {
+        "SPL_peak": {
+          "raw": -4.7288994789123535,
+          "unit": "dB",
+          "adaptive_score": 75.05947943313433,
+          "fixed_score": 63.17775130271912
+        },
+        "K": {
+          "raw": 3.3038861751556396,
+          "unit": "-",
+          "adaptive_score": 8.502487020691289,
+          "fixed_score": 3.3038861751556396
+        },
+        "E_low": {
+          "raw": 2.5217349529266357,
+          "unit": "%",
+          "adaptive_score": 23.695632481673083,
+          "fixed_score": 2.5217349529266357
+        },
+        "E_mid": {
+          "raw": 6.019392967224121,
+          "unit": "%",
+          "adaptive_score": 10.797177883378515,
+          "fixed_score": 6.019392967224121
+        },
+        "E_high": {
+          "raw": 41.45539855957031,
+          "unit": "%",
+          "adaptive_score": 46.793425004775195,
+          "fixed_score": 41.45539855957031
+        },
+        "dB(A)": {
+          "raw": 75.74026489257812,
+          "unit": "dB",
+          "adaptive_score": 83.6659578514254,
+          "fixed_score": 59.567108154296875
+        },
+        "N": {
+          "raw": 253.5064902534784,
+          "unit": "sone",
+          "adaptive_score": 51.93421149044942,
+          "fixed_score": 50.70129805069568
+        },
+        "S": {
+          "raw": 4.570260524749756,
+          "unit": "acum",
+          "adaptive_score": 88.395118876649,
+          "fixed_score": 91.40521049499512
+        },
+        "R": {
+          "raw": 0.39073795080184937,
+          "unit": "asper",
+          "adaptive_score": 28.55432921660156,
+          "fixed_score": 19.53689754009247
+        },
+        "F": {
+          "raw": 0.2429279228347439,
+          "unit": "vacil",
+          "adaptive_score": 23.25319943864759,
+          "fixed_score": 4.858558456694878
+        },
+        "TI": {
+          "raw": 2.4020230770111084,
+          "unit": "-",
+          "adaptive_score": 48.60868924580924,
+          "fixed_score": 48.04046154022217
+        },
+        "A": {
+          "raw": 14.111704871710522,
+          "unit": "-",
+          "adaptive_score": 63.535494892135766,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 41.010780334472656,
+          "unit": "dB",
+          "adaptive_score": 56.18490538262822,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.5458281064065046,
+          "unit": "-",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 10.916562128130092
+        },
+        "SK": {
+          "raw": 8.245862458881579,
+          "unit": "-",
+          "adaptive_score": 8.402686333209784,
+          "fixed_score": 16.491724917763158
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 28.167236328125,
+          "unit": "dB",
+          "adaptive_score": 49.247809717264204,
+          "fixed_score": 93.89078776041667
+        },
+        "NSI": {
+          "raw": 4.1125335693359375,
+          "unit": "-",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 41.125335693359375
+        }
+      }
+    },
+    "zass_ok1.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": 0.0,
+          "unit": "dB",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 75.0
+        },
+        "K": {
+          "raw": 14.05146312713623,
+          "unit": "-",
+          "adaptive_score": 14.643289286485759,
+          "fixed_score": 14.051463127136229
+        },
+        "E_low": {
+          "raw": 4.828915596008301,
+          "unit": "%",
+          "adaptive_score": 38.37518565648118,
+          "fixed_score": 4.828915596008301
+        },
+        "E_mid": {
+          "raw": 11.929261207580566,
+          "unit": "%",
+          "adaptive_score": 15.961645336963537,
+          "fixed_score": 11.929261207580566
+        },
+        "E_high": {
+          "raw": 55.999053955078125,
+          "unit": "%",
+          "adaptive_score": 60.51949532033834,
+          "fixed_score": 55.999053955078125
+        },
+        "dB(A)": {
+          "raw": 70.85928344726562,
+          "unit": "dB",
+          "adaptive_score": 69.84060301160036,
+          "fixed_score": 51.43213907877604
+        },
+        "N": {
+          "raw": 284.47852388012564,
+          "unit": "sone",
+          "adaptive_score": 62.426869383913555,
+          "fixed_score": 56.89570477602513
+        },
+        "S": {
+          "raw": 4.162990093231201,
+          "unit": "acum",
+          "adaptive_score": 81.23916943023326,
+          "fixed_score": 83.25980186462402
+        },
+        "R": {
+          "raw": 0.4159638285636902,
+          "unit": "asper",
+          "adaptive_score": 30.331083242832108,
+          "fixed_score": 20.79819142818451
+        },
+        "F": {
+          "raw": 0.27475645364516066,
+          "unit": "vacil",
+          "adaptive_score": 25.512912271249487,
+          "fixed_score": 5.495129072903214
+        },
+        "TI": {
+          "raw": 2.7584035396575928,
+          "unit": "-",
+          "adaptive_score": 55.27037531756997,
+          "fixed_score": 55.168070793151855
+        },
+        "A": {
+          "raw": 15.383537231354273,
+          "unit": "-",
+          "adaptive_score": 70.02173794081666,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 34.77058410644531,
+          "unit": "dB",
+          "adaptive_score": 36.48548712499598,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.4907981843372189,
+          "unit": "-",
+          "adaptive_score": 70.20018082998098,
+          "fixed_score": 9.815963686744379
+        },
+        "SK": {
+          "raw": 125.28677814327486,
+          "unit": "-",
+          "adaptive_score": 23.33275140850775,
+          "fixed_score": 100.0
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 12.113468170166016,
+          "unit": "dB",
+          "adaptive_score": 17.556037383468098,
+          "fixed_score": 40.37822723388672
+        },
+        "NSI": {
+          "raw": 6.142446994781494,
+          "unit": "-",
+          "adaptive_score": 37.820215615186186,
+          "fixed_score": 61.42446994781494
+        }
+      }
+    },
+    "zass_ok2.wav": {
+      "label": "OK",
+      "features": {
+        "SPL_peak": {
+          "raw": -6.883833408355713,
+          "unit": "dB",
+          "adaptive_score": 67.49167398458448,
+          "fixed_score": 57.79041647911072
+        },
+        "K": {
+          "raw": 3.3431589603424072,
+          "unit": "-",
+          "adaptive_score": 8.524926162959028,
+          "fixed_score": 3.3431589603424072
+        },
+        "E_low": {
+          "raw": 1.5277243852615356,
+          "unit": "%",
+          "adaptive_score": 17.37119012467098,
+          "fixed_score": 1.5277243852615356
+        },
+        "E_mid": {
+          "raw": 3.1999354362487793,
+          "unit": "%",
+          "adaptive_score": 8.333333333333334,
+          "fixed_score": 3.199935436248779
+        },
+        "E_high": {
+          "raw": 23.18218421936035,
+          "unit": "%",
+          "adaptive_score": 29.54745636043075,
+          "fixed_score": 23.18218421936035
+        },
+        "dB(A)": {
+          "raw": 75.48878479003906,
+          "unit": "dB",
+          "adaptive_score": 82.95364175440416,
+          "fixed_score": 59.1479746500651
+        },
+        "N": {
+          "raw": 239.37018109284813,
+          "unit": "sone",
+          "adaptive_score": 47.1451344254187,
+          "fixed_score": 47.87403621856963
+        },
+        "S": {
+          "raw": 4.756455898284912,
+          "unit": "acum",
+          "adaptive_score": 91.66666666666666,
+          "fixed_score": 95.12911796569824
+        },
+        "R": {
+          "raw": 0.2629540264606476,
+          "unit": "asper",
+          "adaptive_score": 19.554023887119083,
+          "fixed_score": 13.14770132303238
+        },
+        "F": {
+          "raw": 0.4196838317068683,
+          "unit": "vacil",
+          "adaptive_score": 35.80224224227681,
+          "fixed_score": 8.393676634137366
+        },
+        "TI": {
+          "raw": 2.1754207611083984,
+          "unit": "-",
+          "adaptive_score": 44.372897304612884,
+          "fixed_score": 43.50841522216797
+        },
+        "A": {
+          "raw": 12.908370014127431,
+          "unit": "-",
+          "adaptive_score": 57.39858361129683,
+          "fixed_score": 100.0
+        },
+        "TNR": {
+          "raw": 45.400630950927734,
+          "unit": "dB",
+          "adaptive_score": 70.04304384847751,
+          "fixed_score": 100.0
+        },
+        "SI": {
+          "raw": 0.5304026668897986,
+          "unit": "-",
+          "adaptive_score": 85.64939521763372,
+          "fixed_score": 10.608053337795972
+        },
+        "SK": {
+          "raw": 7.702185082389133,
+          "unit": "-",
+          "adaptive_score": 8.333333333333332,
+          "fixed_score": 15.404370164778266
+        },
+        "AMD": {
+          "raw": 100.0,
+          "unit": "%",
+          "adaptive_score": 50.0,
+          "fixed_score": 100.0
+        },
+        "ESP": {
+          "raw": 25.94610595703125,
+          "unit": "dB",
+          "adaptive_score": 44.863072292892895,
+          "fixed_score": 86.48701985677083
+        },
+        "NSI": {
+          "raw": 4.2970805168151855,
+          "unit": "-",
+          "adaptive_score": 11.014095008970525,
+          "fixed_score": 42.970805168151855
+        }
+      }
+    }
+  }
+}

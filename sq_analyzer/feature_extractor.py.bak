@@ -1,0 +1,128 @@
+import numpy as np
+import librosa
+from scipy import stats, signal
+from scipy.signal import find_peaks, hilbert
+import warnings
+warnings.filterwarnings('ignore')
+
+try:
+    from mosqito.loudness_zwicker_stationary import loudness_zwicker_stationary
+    from mosqito.sharpness_din import sharpness_din
+    from mosqito.roughness_dw import roughness_dw
+    from mosqito.fluctuation_strength import fluctuation_strength
+    MOSQITO_OK = True
+except:
+    MOSQITO_OK = False
+
+class SQFeatureExtractor:
+    def __init__(self, sr=44100):
+        self.sr = sr
+        self.p_ref = 2e-5
+
+    def A_weighting_filter(self):
+        f1, f2, f3, f4 = 20.598997, 107.65265, 737.86223, 12194.217
+        A1000 = 1.9997
+        nums = [(2*np.pi*f4)**2 * (10**(A1000/20)), 0, 0, 0, 0]
+        dens = np.polymul([1, 4*np.pi*f4, (2*np.pi*f4)**2],
+                          [1, 4*np.pi*f1, (2*np.pi*f1)**2])
+        dens = np.polymul(np.polymul(dens, [1, 2*np.pi*f3]),
+                          [1, 2*np.pi*f2])
+        b, a = signal.bilinear(nums, dens, self.sr)
+        return b, a
+
+    def extract_slice_features(self, wav_path, start_time, end_time):
+        try:
+            s_start, s_end = float(start_time), float(end_time)
+            duration = s_end - s_start
+            if duration <= 0:
+                return None, "非法切片时长"
+
+            y, sr = librosa.load(wav_path, sr=self.sr, offset=s_start, duration=duration)
+            if len(y) == 0:
+                return None, "空音频切片"
+
+            features = {}
+
+            # ===== P0 =====
+            features['K_kurtosis'] = float(stats.kurtosis(y, fisher=True))
+
+            max_p = np.max(np.abs(y))
+            features['SPL_peak'] = float(20*np.log10(max_p/self.p_ref)) if max_p>0 else 0
+
+            S = np.abs(librosa.stft(y))
+            power_spec = S**2
+            freqs = librosa.fft_frequencies(sr=self.sr)
+            total_energy = np.sum(power_spec) + 1e-10
+
+            idx_low = (freqs>=20) & (freqs<200)
+            idx_mid = (freqs>=200) & (freqs<2000)
+            idx_high= (freqs>=2000) & (freqs<=20000)
+
+            features['E_low_ratio']  = float(np.sum(power_spec[idx_low,:]) / total_energy *100)
+            features['E_mid_ratio']  = float(np.sum(power_spec[idx_mid,:]) / total_energy *100)
+            features['E_high_ratio'] = float(np.sum(power_spec[idx_high,:])/ total_energy *100)
+
+            # A计权
+            b, a = self.A_weighting_filter()
+            yA = signal.lfilter(b, a, y)
+            rmsA = np.sqrt(np.mean(yA**2)) + 1e-12
+            features['SPL_A'] = float(20*np.log10(rmsA/self.p_ref))
+
+            # ===== P0 心理声学 =====
+            if MOSQITO_OK:
+                N, _ = loudness_zwicker_stationary(y, fs=self.sr)
+                features['Loudness_N'] = float(N)
+
+                features['Sharpness_S'] = float(sharpness_din(y, fs=self.sr))
+                features['Roughness_R'] = float(roughness_dw(y, fs=self.sr))
+                features['Fluctuation_F'] = float(fluctuation_strength(y, fs=self.sr))
+            else:
+                features['Loudness_N'] = None
+                features['Sharpness_S'] = None
+                features['Roughness_R'] = None
+                features['Fluctuation_F'] = None
+
+            # ===== P1 物理扩展 =====
+            # SI: 频谱不规则度
+            mag = np.abs(np.fft.rfft(y))
+            mag = mag + 1e-12
+            si = np.mean(np.abs(np.log(mag[1:]) - np.log(mag[:-1])))
+            features['Spectral_Irregularity_SI'] = float(si)
+
+            # TNR: 音调突出比
+            peaks, _ = find_peaks(mag, height=np.mean(mag)*2)
+            if len(peaks) > 0:
+                p = peaks[np.argmax(mag[peaks])]
+                win = 20
+                left = max(p-win, 0)
+                right = min(p+win, len(mag))
+                background = np.mean(np.delete(mag[left:right], np.where(np.arange(left,right)==p)))
+                tnr = 20*np.log10(mag[p]/(background+1e-12))
+            else:
+                tnr = 0
+            features['TNR'] = float(tnr)
+
+            # SK: 谱峭度（取最大值）
+            stft = np.abs(librosa.stft(y))
+            sk = stats.kurtosis(stft, axis=1, fisher=True)
+            features['Spectral_Kurtosis_SK'] = float(np.max(sk))
+
+            # AMD: 调制深度
+            env = np.abs(hilbert(y))
+            amd = (np.max(env) - np.min(env)) / (np.max(env) + np.min(env) + 1e-12)
+            features['AMD'] = float(amd)
+
+            # A: 烦恼度（简化）
+            if features['Loudness_N'] is not None:
+                N = features['Loudness_N']
+                S = features['Sharpness_S'] or 0
+                R = features['Roughness_R'] or 0
+                F = features['Fluctuation_F'] or 0
+                A = N * (1 + np.sqrt(0.25*S**2 + 0.5*R**2 + 0.15*F**2))
+                features['Annoyance_A'] = float(A)
+            else:
+                features['Annoyance_A'] = None
+
+            return features, None
+        except Exception as e:
+            return None, str(e)
