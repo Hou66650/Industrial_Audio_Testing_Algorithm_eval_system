@@ -21,13 +21,14 @@
 
 ```mermaid
 flowchart LR
-    A[任务ID输入] --> B[DataLoader 拉取数据库数据]
-    B --> C[音频文件匹配(.json + .wav)]
-    C --> D[特征提取引擎 SQFeatureExtractor]
-    D --> E[机理分析引擎 SQAnalyzer]
-    E --> F[结果可视化 Streamlit]
-    F --> G[报告导出 CSV/PDF]
-    F --> H[AI智能分析接口]
+    A["任务ID输入"] --> B["DataLoader 拉取数据库数据"]
+    B --> C["音频文件匹配 .json + .wav"]
+    C --> D["特征提取引擎 SQFeatureExtractor"]
+    D --> E["机理分析引擎 SQAnalyzer"]
+    E --> F["结果可视化 Streamlit"]
+    F --> G["报告导出 CSV/PDF"]
+    F --> H["AI智能分析接口"]
+
 ```
 
 ---
