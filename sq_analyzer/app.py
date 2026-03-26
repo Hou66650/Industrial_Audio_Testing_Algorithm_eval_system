@@ -188,7 +188,7 @@ with st.sidebar:
     with st.expander("📘 机理特征解释表（点击展开）", expanded=False):
         st.dataframe(MECH_TABLE, use_container_width=True, height=350)
 
-DB_CONFIG = {"host": db_host, "port": 23306, "user": "root", "password": "SmartTpm.2023", "db_name": "smart_tools"}
+DB_CONFIG = {"host": db_host, "port": , "user": "root", "password": "", "db_name": ""}
 @st.cache_data(ttl=600, show_spinner=False)
 def fetch_base_data(task_id, audio_dir):
     loader = DataLoader(**DB_CONFIG)
