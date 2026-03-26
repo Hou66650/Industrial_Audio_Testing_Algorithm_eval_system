@@ -183,8 +183,8 @@ with st.sidebar:
     db_host = st.text_input("数据库 IP", value="192.168.2.176")
     start_btn = st.button("🚀 启动全量特征提取与 ML 分析", type="primary", use_container_width=True)
     st.markdown("### 🔑 AI 接口设置")
-    ai_api_key = st.text_input("云雾 API Key", type="password",value="sk-jk2fshDw2BhBz4tWv2a75rsjYMlSMF1v5u71AW6p6DVFPtX2")
-    ai_api_url = st.text_input("云雾 API URL", value="https://api.yunwu.ai/v1")
+    ai_api_key = st.text_input(" API Key", type="password",value="")
+    ai_api_url = st.text_input(" API URL", value="")
     with st.expander("📘 机理特征解释表（点击展开）", expanded=False):
         st.dataframe(MECH_TABLE, use_container_width=True, height=350)
 
